@@ -6,10 +6,14 @@ public class Troca_Personagens : MonoBehaviour
     public bool sad_player = false;
     public bool brave_player = false;
     public bool normal_player = true;
+    public bool medo_player = false;
+    public bool happy_player = false;
 
     public GameObject Sad_Object;
     public GameObject Brave_Object;
     public GameObject Normal_Object;
+    public GameObject Medo_Object;
+    public GameObject Happy_Object;
     public GameObject Personagens_Object;
 
     [Header("Sons de Transformação")]
@@ -32,46 +36,72 @@ public class Troca_Personagens : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            SwapLobi();
+            SwapSad();
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            SwapZombie();
+            SwapBrave();
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            SwapHuman();
+            SwapNormal();
         }
     }
 
-    public void SwapLobi()
+    public void SwapSad()
     {
         sad_player = true;
         brave_player = false;
         normal_player = false;
+        medo_player = false;
+        happy_player = false;
         Update_Objects();
 
         PlaySound(somTransformaLobisomem);
     }
 
-    public void SwapZombie()
+    public void SwapBrave()
     {
         sad_player = false;
         brave_player = true;
         normal_player = false;
+        medo_player = false;
+        happy_player = false;
         Update_Objects();
 
         PlaySound(somTransformaZumbi);
     }
 
-    public void SwapHuman()
+    public void SwapNormal()
     {
         sad_player = false;
         brave_player = false;
         normal_player = true;
+        medo_player = false;
+        happy_player = false;
         Update_Objects();
 
         PlaySound(somTransformaHumano);
+    }
+
+    public void SwapMedo()
+    {
+        sad_player = false;
+        brave_player = false;
+        normal_player = false;
+        medo_player = true;
+        happy_player = false;
+        Update_Objects();        
+    }
+
+    public void SwapHappy()
+    {
+        sad_player = false;
+        brave_player = false;
+        normal_player = false;
+        medo_player = false;
+        happy_player = true;
+        Update_Objects();
     }
 
     void Update_Objects()
@@ -79,6 +109,8 @@ public class Troca_Personagens : MonoBehaviour
         Sad_Object.SetActive(sad_player);
         Brave_Object.SetActive(brave_player);
         Normal_Object.SetActive(normal_player);
+        Medo_Object.SetActive(medo_player);
+        Happy_Object.SetActive(happy_player);
     }
 
     void PlaySound(AudioClip clip)

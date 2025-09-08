@@ -9,6 +9,12 @@ public class PlayerMovTopdown : MonoBehaviour
 
     PlayerInputActions playerActionsInput;
 
+    Troca_Personagens troca;
+
+    private void Start()
+    {
+        troca = FindObjectOfType(typeof(Troca_Personagens)) as Troca_Personagens; ; 
+    }
     private void Awake()
     {
         playerActionsInput = new PlayerInputActions();
@@ -22,11 +28,24 @@ public class PlayerMovTopdown : MonoBehaviour
 
     private void FixedUpdate()
     {
+        MedoMode();
         Vector3 newPos = transform.position + new Vector3(movementInput.x, movementInput.y, 0) * moveSpeed * Time.deltaTime;
         transform.position = newPos;
 
         playerActionsInput.Player.Enable();
         playerActionsInput.Player.Move.performed += OnMove;
         playerActionsInput.Player.Move.canceled += OnMove;
+    }
+
+    void MedoMode()
+    {
+        if (troca.Medo_Object == true)
+        {
+            moveSpeed = 10f;
+        }
+        else if(troca.Medo_Object == false)
+        {
+            moveSpeed = 5f;
+        }
     }
 }
