@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 
+public enum Emotions
+{
+    Normal, Sad, Brave, Medo, Happy
+}
 public class Troca_Personagens : MonoBehaviour
 {
     public bool sad_player = false;
@@ -25,6 +30,8 @@ public class Troca_Personagens : MonoBehaviour
 
     PlayerInputActions playerActionsInput;
 
+    Emotions emotions;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,8 +42,32 @@ public class Troca_Personagens : MonoBehaviour
 
         playerActionsInput = new PlayerInputActions();
     }
+    void OnEnable()
+    {
+        // Enable the action map
+        playerActionsInput.Enable();
 
-    void Update()
+        // Subscribe to Pause action
+        playerActionsInput.Player.ChangeHappy.performed += ChangeToNewEmotion;
+        playerActionsInput.Player.ChangeSad.performed += ChangeToNewEmotion;
+        playerActionsInput.Player.ChangeBrave.performed += ChangeToNewEmotion;
+        playerActionsInput.Player.ChangeHappy.performed += ChangeToNewEmotion;
+        playerActionsInput.Player.ChangeFear.performed += ChangeToNewEmotion;
+    }
+
+    void OnDisable()
+    {
+        // Unsubscribe to avoid leaks
+        playerActionsInput.Player.ChangeHappy.performed -= ChangeToNewEmotion;
+        playerActionsInput.Player.ChangeSad.performed -= ChangeToNewEmotion;
+        playerActionsInput.Player.ChangeBrave.performed -= ChangeToNewEmotion;
+        playerActionsInput.Player.ChangeHappy.performed -= ChangeToNewEmotion;
+        playerActionsInput.Player.ChangeFear.performed -= ChangeToNewEmotion;
+
+        playerActionsInput.Disable();
+    }
+
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -58,7 +89,7 @@ public class Troca_Personagens : MonoBehaviour
         {
             SwapHappy();
         }
-    }
+    }*/
 
     public void SwapSad()
     {
@@ -130,6 +161,24 @@ public class Troca_Personagens : MonoBehaviour
         if (clip != null)
         {
             audioSource.PlayOneShot(clip);
+        }
+    }
+
+    void ChangeToNewEmotion(InputAction.CallbackContext context)
+    {
+        switch (emotions)
+        {
+            case Emotions.Normal:
+
+                break;
+            case Emotions.Sad:
+                break;
+            case Emotions.Brave:
+                break;
+            case Emotions.Medo:
+                break;
+            case Emotions.Happy:
+                break;
         }
     }
 }

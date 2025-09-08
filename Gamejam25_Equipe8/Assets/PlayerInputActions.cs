@@ -110,18 +110,54 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ChangeEmotion"",
+                    ""name"": ""Fire"",
                     ""type"": ""Button"",
-                    ""id"": ""3a1013cb-3624-453a-a0c1-978b3ec08c19"",
+                    ""id"": ""bd0d805f-a651-4251-b6cf-97a8dfd6429c"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Fire"",
+                    ""name"": ""ChangeNormal"",
                     ""type"": ""Button"",
-                    ""id"": ""bd0d805f-a651-4251-b6cf-97a8dfd6429c"",
+                    ""id"": ""82a6d99f-4e71-4160-bb58-a94a6af2ad56"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeSad"",
+                    ""type"": ""Button"",
+                    ""id"": ""890c0cbb-f2f4-405c-87db-4cac6fd6a793"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeBrave"",
+                    ""type"": ""Button"",
+                    ""id"": ""2aa8a590-796d-42b2-a102-80fd05efa0b7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeHappy"",
+                    ""type"": ""Button"",
+                    ""id"": ""c8f4d9b8-68d2-4ced-88b4-6e73e16cee58"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeFear"",
+                    ""type"": ""Button"",
+                    ""id"": ""a3802ba6-bde8-440f-8f71-c3792d5571b7"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -241,67 +277,67 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""decd5d38-f511-470b-8348-56059d102180"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""ChangeEmotion"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c23b887c-b6b2-4d09-a017-2e27347011d4"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeEmotion"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f885a308-405a-4987-a4dc-20d28ca92047"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeEmotion"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5773b177-b6fb-4d8f-b1cd-51b23dac7cf8"",
-                    ""path"": ""<Keyboard>/4"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeEmotion"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""77fb4308-ced5-4db2-aa69-d0637d1cc364"",
-                    ""path"": ""<Keyboard>/5"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeEmotion"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""371ee7fa-89c0-494c-87a6-d393e01d3da9"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a985a6df-a7ea-483f-9d11-38160ef099ca"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeNormal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5740d4d3-51b0-4792-95ef-3eee67d16d98"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeSad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c73d6d3-983a-4e8e-a7c6-4a0eedcccd0b"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeBrave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c995b4b-27f2-48e1-b2e0-741a6967b87c"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeHappy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0b582d5-03ef-40eb-8ec6-9fe1aa0685de"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeFear"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -375,8 +411,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
-        m_Player_ChangeEmotion = m_Player.FindAction("ChangeEmotion", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_ChangeNormal = m_Player.FindAction("ChangeNormal", throwIfNotFound: true);
+        m_Player_ChangeSad = m_Player.FindAction("ChangeSad", throwIfNotFound: true);
+        m_Player_ChangeBrave = m_Player.FindAction("ChangeBrave", throwIfNotFound: true);
+        m_Player_ChangeHappy = m_Player.FindAction("ChangeHappy", throwIfNotFound: true);
+        m_Player_ChangeFear = m_Player.FindAction("ChangeFear", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -459,8 +499,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Pause;
-    private readonly InputAction m_Player_ChangeEmotion;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_ChangeNormal;
+    private readonly InputAction m_Player_ChangeSad;
+    private readonly InputAction m_Player_ChangeBrave;
+    private readonly InputAction m_Player_ChangeHappy;
+    private readonly InputAction m_Player_ChangeFear;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -481,13 +525,29 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         /// <summary>
-        /// Provides access to the underlying input action "Player/ChangeEmotion".
-        /// </summary>
-        public InputAction @ChangeEmotion => m_Wrapper.m_Player_ChangeEmotion;
-        /// <summary>
         /// Provides access to the underlying input action "Player/Fire".
         /// </summary>
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChangeNormal".
+        /// </summary>
+        public InputAction @ChangeNormal => m_Wrapper.m_Player_ChangeNormal;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChangeSad".
+        /// </summary>
+        public InputAction @ChangeSad => m_Wrapper.m_Player_ChangeSad;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChangeBrave".
+        /// </summary>
+        public InputAction @ChangeBrave => m_Wrapper.m_Player_ChangeBrave;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChangeHappy".
+        /// </summary>
+        public InputAction @ChangeHappy => m_Wrapper.m_Player_ChangeHappy;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChangeFear".
+        /// </summary>
+        public InputAction @ChangeFear => m_Wrapper.m_Player_ChangeFear;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -520,12 +580,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
-            @ChangeEmotion.started += instance.OnChangeEmotion;
-            @ChangeEmotion.performed += instance.OnChangeEmotion;
-            @ChangeEmotion.canceled += instance.OnChangeEmotion;
             @Fire.started += instance.OnFire;
             @Fire.performed += instance.OnFire;
             @Fire.canceled += instance.OnFire;
+            @ChangeNormal.started += instance.OnChangeNormal;
+            @ChangeNormal.performed += instance.OnChangeNormal;
+            @ChangeNormal.canceled += instance.OnChangeNormal;
+            @ChangeSad.started += instance.OnChangeSad;
+            @ChangeSad.performed += instance.OnChangeSad;
+            @ChangeSad.canceled += instance.OnChangeSad;
+            @ChangeBrave.started += instance.OnChangeBrave;
+            @ChangeBrave.performed += instance.OnChangeBrave;
+            @ChangeBrave.canceled += instance.OnChangeBrave;
+            @ChangeHappy.started += instance.OnChangeHappy;
+            @ChangeHappy.performed += instance.OnChangeHappy;
+            @ChangeHappy.canceled += instance.OnChangeHappy;
+            @ChangeFear.started += instance.OnChangeFear;
+            @ChangeFear.performed += instance.OnChangeFear;
+            @ChangeFear.canceled += instance.OnChangeFear;
         }
 
         /// <summary>
@@ -543,12 +615,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
-            @ChangeEmotion.started -= instance.OnChangeEmotion;
-            @ChangeEmotion.performed -= instance.OnChangeEmotion;
-            @ChangeEmotion.canceled -= instance.OnChangeEmotion;
             @Fire.started -= instance.OnFire;
             @Fire.performed -= instance.OnFire;
             @Fire.canceled -= instance.OnFire;
+            @ChangeNormal.started -= instance.OnChangeNormal;
+            @ChangeNormal.performed -= instance.OnChangeNormal;
+            @ChangeNormal.canceled -= instance.OnChangeNormal;
+            @ChangeSad.started -= instance.OnChangeSad;
+            @ChangeSad.performed -= instance.OnChangeSad;
+            @ChangeSad.canceled -= instance.OnChangeSad;
+            @ChangeBrave.started -= instance.OnChangeBrave;
+            @ChangeBrave.performed -= instance.OnChangeBrave;
+            @ChangeBrave.canceled -= instance.OnChangeBrave;
+            @ChangeHappy.started -= instance.OnChangeHappy;
+            @ChangeHappy.performed -= instance.OnChangeHappy;
+            @ChangeHappy.canceled -= instance.OnChangeHappy;
+            @ChangeFear.started -= instance.OnChangeFear;
+            @ChangeFear.performed -= instance.OnChangeFear;
+            @ChangeFear.canceled -= instance.OnChangeFear;
         }
 
         /// <summary>
@@ -669,18 +753,46 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "ChangeEmotion" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnChangeEmotion(InputAction.CallbackContext context);
-        /// <summary>
         /// Method invoked when associated input action "Fire" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnFire(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeNormal" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeNormal(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeSad" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeSad(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeBrave" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeBrave(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeHappy" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeHappy(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeFear" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeFear(InputAction.CallbackContext context);
     }
 }
