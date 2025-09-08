@@ -3,13 +3,13 @@ using UnityEngine.Audio;
 
 public class Troca_Personagens : MonoBehaviour
 {
-    public bool lobsomen_player = false;
-    public bool zombie_player = false;
-    public bool human_player = true;
+    public bool sad_player = false;
+    public bool brave_player = false;
+    public bool normal_player = true;
 
-    public GameObject Lobisomen_Object;
-    public GameObject Zombie_Object;
-    public GameObject Human_Object;
+    public GameObject Sad_Object;
+    public GameObject Brave_Object;
+    public GameObject Normal_Object;
     public GameObject Personagens_Object;
 
     [Header("Sons de Transformação")]
@@ -46,9 +46,9 @@ public class Troca_Personagens : MonoBehaviour
 
     public void SwapLobi()
     {
-        lobsomen_player = true;
-        zombie_player = false;
-        human_player = false;
+        sad_player = true;
+        brave_player = false;
+        normal_player = false;
         Update_Objects();
 
         PlaySound(somTransformaLobisomem);
@@ -56,9 +56,9 @@ public class Troca_Personagens : MonoBehaviour
 
     public void SwapZombie()
     {
-        lobsomen_player = false;
-        zombie_player = true;
-        human_player = false;
+        sad_player = false;
+        brave_player = true;
+        normal_player = false;
         Update_Objects();
 
         PlaySound(somTransformaZumbi);
@@ -66,9 +66,9 @@ public class Troca_Personagens : MonoBehaviour
 
     public void SwapHuman()
     {
-        lobsomen_player = false;
-        zombie_player = false;
-        human_player = true;
+        sad_player = false;
+        brave_player = false;
+        normal_player = true;
         Update_Objects();
 
         PlaySound(somTransformaHumano);
@@ -76,9 +76,9 @@ public class Troca_Personagens : MonoBehaviour
 
     void Update_Objects()
     {
-        Lobisomen_Object.SetActive(lobsomen_player);
-        Zombie_Object.SetActive(zombie_player);
-        Human_Object.SetActive(human_player);
+        Sad_Object.SetActive(sad_player);
+        Brave_Object.SetActive(brave_player);
+        Normal_Object.SetActive(normal_player);
     }
 
     void PlaySound(AudioClip clip)
