@@ -17,7 +17,6 @@ public class PlayerMovTopdown : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
-        Debug.Log($"Move input: {movementInput}");
 
     }
 
@@ -25,7 +24,6 @@ public class PlayerMovTopdown : MonoBehaviour
     {
         Vector3 newPos = transform.position + new Vector3(movementInput.x, movementInput.y, 0) * moveSpeed * Time.deltaTime;
         transform.position = newPos;
-        Debug.Log($"Transform moved to: {newPos}");
 
         playerActionsInput.Player.Enable();
         playerActionsInput.Player.Move.performed += OnMove;
