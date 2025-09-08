@@ -23,6 +23,8 @@ public class Troca_Personagens : MonoBehaviour
 
     private AudioSource audioSource;
 
+    PlayerInputActions playerActionsInput;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -30,6 +32,8 @@ public class Troca_Personagens : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+
+        playerActionsInput = new PlayerInputActions();
     }
 
     void Update()

@@ -7,6 +7,32 @@ public class SetPause : MonoBehaviour
     [SerializeField] UnityEvent OnPause, OnUnpause;
     bool isPaused;
 
+    PlayerInputActions playerActionsInput;
+
+    private void Awake()
+    {
+        playerActionsInput = new PlayerInputActions();
+    }
+
+    void OnEnable()
+    {
+        // Enable the action map
+        playerActionsInput.Enable();
+
+        // Subscribe to Pause action
+        playerActionsInput.Player.Pause.performed += Pause;
+        playerActionsInput.Player.Pause.canceled += Pause;
+    }
+
+    void OnDisable()
+    {
+        // Unsubscribe to avoid leaks
+        playerActionsInput.Player.Pause.performed -= Pause;
+        playerActionsInput.Player.Pause.canceled -= Pause;
+
+        playerActionsInput.Disable();
+    }
+
     void SetCursor()
     {
         if (isPaused)
@@ -35,9 +61,9 @@ public class SetPause : MonoBehaviour
             SetCursor();
         }
     }
+
     bool SetPaused(bool _paused)
     {
         return isPaused = _paused;
     }
-
 }

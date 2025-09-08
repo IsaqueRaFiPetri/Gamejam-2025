@@ -13,7 +13,7 @@ public class PlayerMovTopdown : MonoBehaviour
 
     private void Start()
     {
-        troca = FindObjectOfType(typeof(Troca_Personagens)) as Troca_Personagens; ; 
+        troca = FindFirstObjectByType(typeof(Troca_Personagens)) as Troca_Personagens; ; 
     }
     private void Awake()
     {
