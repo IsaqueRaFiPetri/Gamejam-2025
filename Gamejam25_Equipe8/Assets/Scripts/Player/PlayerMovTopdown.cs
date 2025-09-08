@@ -28,7 +28,7 @@ public class PlayerMovTopdown : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MedoMode();
+        //MedoMode();
         Vector3 newPos = transform.position + new Vector3(movementInput.x, movementInput.y, 0) * moveSpeed * Time.deltaTime;
         transform.position = newPos;
 
@@ -37,16 +37,16 @@ public class PlayerMovTopdown : MonoBehaviour
         playerActionsInput.Player.Move.canceled += OnMove;
     }
 
-    void MedoMode()
-    {
-        if (troca.Medo_Object == true)
-        {
-            moveSpeed = 10f;
-        }
-        else if(troca.Medo_Object == false)
-        {
-            moveSpeed = 5f;
-        }
-    }
+    //void MedoMode()
+   // {
+       // if (troca.Medo_Object == true)
+       // {
+        //    moveSpeed = 10f;
+      //  }
+       // else if(troca.Medo_Object == false)
+       // {
+       //     moveSpeed = 5f;
+       // }
+    //}
 }
 //
