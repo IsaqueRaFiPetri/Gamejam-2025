@@ -7,4 +7,9 @@ public class TeleportToScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneToLoad);
     }
+
+    private void Quitgame()
+    {
+        Application.Quit();
+    }
 }

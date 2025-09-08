@@ -1,19 +1,34 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovTopdown : MonoBehaviour
 {
-    [SerializeField] Animator anim;
-    [SerializeField] float speed;
+    [SerializeField] float moveSpeed = 5f;
 
-    void FixedUpdate()
+    Vector2 movementInput;
+
+    PlayerInputActions playerActionsInput;
+
+    private void Awake()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
+        playerActionsInput = new PlayerInputActions();
+    }
 
-        anim.SetFloat("Horizontal", movement.x);
-        anim.SetFloat("Vertical", movement.y);
-        anim.SetFloat("Speed", movement.magnitude);
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        movementInput = context.ReadValue<Vector2>();
+        Debug.Log($"Move input: {movementInput}");
 
-        transform.position = transform.position + movement * speed * Time.deltaTime;
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 newPos = transform.position + new Vector3(movementInput.x, movementInput.y, 0) * moveSpeed * Time.deltaTime;
+        transform.position = newPos;
+        Debug.Log($"Transform moved to: {newPos}");
+
+        playerActionsInput.Player.Enable();
+        playerActionsInput.Player.Move.performed += OnMove;
+        playerActionsInput.Player.Move.canceled += OnMove;
     }
 }
-//https://www.youtube.com/watch?v=P8GF_clL1Y0
