@@ -1,36 +1,35 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public enum Emotions
 {
-    Normal, Sad, Brave, Medo, Happy
+    Normal, Sad, Brave, Fear, Happy
 }
 public class Troca_Personagens : MonoBehaviour
 {
-    public bool sad_player = false;
-    public bool brave_player = false;
-    public bool normal_player = true;
-    public bool medo_player = false;
-    public bool happy_player = false;
+    bool isNormal = true, isSad, isBrave, isHappy, isFear;
 
-    public GameObject Sad_Object;
-    public GameObject Brave_Object;
-    public GameObject Normal_Object;
-    public GameObject Medo_Object;
-    public GameObject Happy_Object;
-    public GameObject Personagens_Object;
+    [Header("Objeto Modos")]
+    public GameObject Sad_Object, Brave_Object, Normal_Object, Medo_Object, Happy_Object, Personagens_Object;
 
+    [Header("Imagem Modos")]
+    [SerializeField] Image normal, sad, brave, fear, happy;
+     
     [Header("Sons de Transformação")]
-    public AudioClip somTransformaHumano;
-    public AudioClip somTransformaZumbi;
-    public AudioClip somTransformaLobisomem;
+    [SerializeField] AudioClip transformationSound;
 
-    private AudioSource audioSource;
+    AudioSource audioSource;
 
     PlayerInputActions playerActionsInput;
 
     Emotions emotions;
+
+    private void Awake()
+    {
+        playerActionsInput = new PlayerInputActions();
+    }
 
     void Start()
     {
@@ -39,121 +38,58 @@ public class Troca_Personagens : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
-
-        playerActionsInput = new PlayerInputActions();
     }
     void OnEnable()
     {
-        // Enable the action map
         playerActionsInput.Enable();
 
-        // Subscribe to Pause action
-        playerActionsInput.Player.ChangeHappy.performed += ChangeToNewEmotion;
-        playerActionsInput.Player.ChangeSad.performed += ChangeToNewEmotion;
-        playerActionsInput.Player.ChangeBrave.performed += ChangeToNewEmotion;
-        playerActionsInput.Player.ChangeHappy.performed += ChangeToNewEmotion;
-        playerActionsInput.Player.ChangeFear.performed += ChangeToNewEmotion;
+        playerActionsInput.Player.ChangeNormal.performed += ctx => Swap(Emotions.Normal);
+        playerActionsInput.Player.ChangeSad.performed += ctx => Swap(Emotions.Sad);
+        playerActionsInput.Player.ChangeBrave.performed += ctx => Swap(Emotions.Brave);
+        playerActionsInput.Player.ChangeFear.performed += ctx => Swap(Emotions.Fear);
+        playerActionsInput.Player.ChangeHappy.performed += ctx => Swap(Emotions.Happy);
     }
 
-    void OnDisable()
+    public void Swap(Emotions newEmotion)
     {
-        // Unsubscribe to avoid leaks
-        playerActionsInput.Player.ChangeHappy.performed -= ChangeToNewEmotion;
-        playerActionsInput.Player.ChangeSad.performed -= ChangeToNewEmotion;
-        playerActionsInput.Player.ChangeBrave.performed -= ChangeToNewEmotion;
-        playerActionsInput.Player.ChangeHappy.performed -= ChangeToNewEmotion;
-        playerActionsInput.Player.ChangeFear.performed -= ChangeToNewEmotion;
+        isSad = isBrave = isNormal = isFear = isHappy = false;
 
-        playerActionsInput.Disable();
-    }
+        emotions = newEmotion;
 
-    /*void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
+        switch (newEmotion)
         {
-            SwapSad();
+            case Emotions.Normal:
+                isNormal = true;
+                PlaySound(transformationSound);
+                break;
+            case Emotions.Sad:
+                isSad = true;
+                PlaySound(transformationSound);
+                break;
+            case Emotions.Brave:
+                isBrave = true;
+                PlaySound(transformationSound);
+                break;
+            case Emotions.Fear:
+                isFear = true;
+                PlaySound(transformationSound);
+                break;
+            case Emotions.Happy:
+                isHappy = true;
+                PlaySound(transformationSound);
+                break;
         }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SwapBrave();
-        }
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            SwapNormal();
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            SwapMedo();
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            SwapHappy();
-        }
-    }*/
-
-    public void SwapSad()
-    {
-        sad_player = true;
-        brave_player = false;
-        normal_player = false;
-        medo_player = false;
-        happy_player = false;
-        Update_Objects();
-
-        PlaySound(somTransformaLobisomem);
-    }
-
-    public void SwapBrave()
-    {
-        sad_player = false;
-        brave_player = true;
-        normal_player = false;
-        medo_player = false;
-        happy_player = false;
-        Update_Objects();
-
-        PlaySound(somTransformaZumbi);
-    }
-
-    public void SwapNormal()
-    {
-        sad_player = false;
-        brave_player = false;
-        normal_player = true;
-        medo_player = false;
-        happy_player = false;
-        Update_Objects();
-
-        PlaySound(somTransformaHumano);
-    }
-
-    public void SwapMedo()
-    {
-        sad_player = false;
-        brave_player = false;
-        normal_player = false;
-        medo_player = true;
-        happy_player = false;
-        Update_Objects();        
-    }
-
-    public void SwapHappy()
-    {
-        sad_player = false;
-        brave_player = false;
-        normal_player = false;
-        medo_player = false;
-        happy_player = true;
         Update_Objects();
     }
+
 
     void Update_Objects()
     {
-        Sad_Object.SetActive(sad_player);
-        Brave_Object.SetActive(brave_player);
-        Normal_Object.SetActive(normal_player);
-        Medo_Object.SetActive(medo_player);
-        Happy_Object.SetActive(happy_player);
+        Sad_Object.SetActive(isSad);
+        Brave_Object.SetActive(isBrave);
+        Normal_Object.SetActive(isNormal);
+        Medo_Object.SetActive(isFear);
+        Happy_Object.SetActive(isHappy);
     }
 
     void PlaySound(AudioClip clip)
@@ -161,24 +97,6 @@ public class Troca_Personagens : MonoBehaviour
         if (clip != null)
         {
             audioSource.PlayOneShot(clip);
-        }
-    }
-
-    void ChangeToNewEmotion(InputAction.CallbackContext context)
-    {
-        switch (emotions)
-        {
-            case Emotions.Normal:
-
-                break;
-            case Emotions.Sad:
-                break;
-            case Emotions.Brave:
-                break;
-            case Emotions.Medo:
-                break;
-            case Emotions.Happy:
-                break;
         }
     }
 }
