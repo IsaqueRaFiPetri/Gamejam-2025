@@ -46,6 +46,14 @@ public class Troca_Personagens : MonoBehaviour
         {
             SwapNormal();
         }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            SwapMedo();
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SwapHappy();
+        }
     }
 
     public void SwapSad()
