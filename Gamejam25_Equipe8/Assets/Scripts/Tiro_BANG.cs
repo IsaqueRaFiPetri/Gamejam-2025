@@ -7,20 +7,30 @@ public class Tiro_BANG : MonoBehaviour
     public Transform firePosition;
     public float projectileSpeed = 20f;
     public float fireRate = 0.5f;
-
     float nextFireTime = 0f;
+
+    Troca_Personagens troca;
+
+    private void Start()
+    {
+        troca = FindFirstObjectByType<Troca_Personagens>();
+    }
 
     void Update()
     {
         if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
-        {
+        {          
             Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPosition.z = 0f;
-
+            
             Vector2 direction = (mouseWorldPosition - firePosition.position).normalized;
+           
+            if (Troca_Personagens.instance.isFear)
+            {
+                direction *= -1;
+            }
 
             Shoot(direction);
-
             nextFireTime = Time.time + fireRate;
         }
     }
@@ -34,7 +44,6 @@ public class Tiro_BANG : MonoBehaviour
         {
             rb.linearVelocity = direction * projectileSpeed;
 
-           
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
