@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821bdfdac1f62464ab653834d2881b1e, type: 3}
   m_Name: EnemyStatus
   m_EditorClassIdentifier: 
-  life: 0
+  life: 14
   maxLife: 14
   lifeRegen: 0
   energy: 0

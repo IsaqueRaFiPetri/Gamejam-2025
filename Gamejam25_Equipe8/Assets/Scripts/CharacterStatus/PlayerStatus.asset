@@ -15,7 +15,7 @@ MonoBehaviour:
   life: 50
   maxLife: 50
   lifeRegen: 4
-  energy: 9.5
+  energy: 8
   maxEnergy: 52
   energyRegen: 6.5
   moveSpeed: 5
