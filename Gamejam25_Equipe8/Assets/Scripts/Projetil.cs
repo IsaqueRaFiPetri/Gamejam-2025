@@ -2,18 +2,25 @@ using UnityEngine;
 
 public class Projetil : MonoBehaviour
 {
-    [SerializeField] CharacterStatus playerStats;    
+    [SerializeField] CharacterStatus playerStats;
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        Enemy enemy = other.GetComponent<Enemy>();
+        if (enemy != null)
         {
-            BANG();           
-        }       
-    }
-
-    void BANG()
-    {
-        Enemy.instance.TakeDamageenemy(playerStats.damage);       
+            if (Troca_Personagens.instance.isHappy)
+            {
+                enemy.TakeDamageenemy(playerStats.damage -1);
+            }
+            else if (Troca_Personagens.instance.isBrave)
+            {
+                enemy.TakeDamageenemy(playerStats.damage * 2);
+            }
+            else 
+            {
+                enemy.TakeDamageenemy(playerStats.damage);
+            }
+        }
     }
 }

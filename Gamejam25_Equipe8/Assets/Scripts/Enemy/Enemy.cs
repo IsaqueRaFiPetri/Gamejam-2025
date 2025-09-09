@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 public class Enemy : MonoBehaviour
 {
-    public static Enemy instance;
     [SerializeField] Image lifeBar;
     public Transform playerTransform;
     public float moveSpeed = 2f;
@@ -13,7 +12,6 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        instance = this;
         enemyStatus.life = enemyStatus.maxLife;
     }
     void Update()
@@ -44,23 +42,13 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
-        PlayerStatus.instance.TakeDamageplayer(enemyStatus.damage);
+        if (!Troca_Personagens.instance.isSad)
+        {
+            PlayerStatus.instance.TakeDamageplayer(enemyStatus.damage);
+        }        
     }
     public void TakeDamageenemy(float damage)
     {
-        if (!Troca_Personagens.instance.isHappy && !Troca_Personagens.instance.isBrave)
-        {
-            enemyStatus.life -= damage;
-        }
-        else if (Troca_Personagens.instance.isHappy)
-        {
-            enemyStatus.life -= damage - 1;
-        }
-        else if (Troca_Personagens.instance.isBrave)
-        {
-            enemyStatus.life -= damage + 1;
-        }
-
         if (enemyStatus.life <= 0)
         {
             Destroy(gameObject);

@@ -57,5 +57,6 @@ public class PlayerStatus : MonoBehaviour
     public void ReduceEnergy(float reduction)
     {
         playerStatus.energy -= reduction;
+
     }
 }
