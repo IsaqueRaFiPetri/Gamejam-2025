@@ -4,8 +4,10 @@ using UnityEngine;
 public class CharacterStatus : ScriptableObject
 {
     public float life;
+    public float maxLife;
     public float lifeRegen;
     public float energy;
+    public float maxEnergy;
     public float energyRegen;
     public float moveSpeed;
     public float thougness;
