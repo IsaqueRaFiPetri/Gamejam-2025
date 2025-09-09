@@ -8,12 +8,11 @@ public class Tiro_BANG : MonoBehaviour
     public float projectileSpeed = 20f;
     public float fireRate = 0.5f;
     float nextFireTime = 0f;
-
-    Troca_Personagens troca;
+    [SerializeField] float cost;
+    [SerializeField] CharacterStatus playerStats;
 
     private void Start()
     {
-        troca = FindFirstObjectByType<Troca_Personagens>();
         mainCamera = FindFirstObjectByType<Camera>();
     }
 
@@ -44,17 +43,22 @@ public class Tiro_BANG : MonoBehaviour
 
     void Shoot(Vector2 direction)
     {
-        GameObject projectile = Instantiate(projectilePrefab, firePosition.position, Quaternion.identity);
-        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-
-        if (rb != null)
+        if(playerStats.energy >= cost)
         {
-            rb.linearVelocity = direction * projectileSpeed;
+            GameObject projectile = Instantiate(projectilePrefab, firePosition.position, Quaternion.identity);
+            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            PlayerStatus.instance.ReduceEnergy(cost);
+
+            if (rb != null)
+            {
+                rb.linearVelocity = direction * projectileSpeed;
+
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            }
+
+            Destroy(projectile, 1.5f);
         }
-
-        Destroy(projectile, 1.5f);
     }
 }

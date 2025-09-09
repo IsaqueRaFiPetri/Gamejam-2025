@@ -781,6 +781,8 @@ MonoBehaviour:
   firePosition: {fileID: 1596857288903503438}
   projectileSpeed: 20
   fireRate: 0.5
+  cost: 0
+  playerStats: {fileID: 11400000, guid: 164acb204e16fa741a9191038096ad0b, type: 2}
 --- !u!1 &7521233523559297772
 GameObject:
   m_ObjectHideFlags: 0
