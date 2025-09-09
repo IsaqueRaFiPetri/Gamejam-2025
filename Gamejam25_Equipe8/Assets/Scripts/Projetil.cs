@@ -8,15 +8,12 @@ public class Projetil : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            BANG();
-            print("tiro");
-        }
-        print("detectado");
+            BANG();           
+        }       
     }
 
     void BANG()
     {
-        Enemy.instance.TakeDamageenemy(playerStats.damage);
-        print("WHAT");
+        Enemy.instance.TakeDamageenemy(playerStats.damage);       
     }
 }

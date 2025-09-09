@@ -29,8 +29,7 @@ public class Enemy : MonoBehaviour
     void OnCollisionStay2D(Collision2D player_Collider)
     {
         if(player_Collider.gameObject.CompareTag("Player") && canDetectCollision)
-        {
-            Debug.Log("Inimigo colidiu com o player!");
+        {          
             Attack();
             canDetectCollision = false;
             StartCoroutine(ResetCollisionDetection());
