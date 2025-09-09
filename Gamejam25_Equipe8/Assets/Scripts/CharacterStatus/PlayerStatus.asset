@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 50
   maxLife: 50
-  lifeRegen: 5
-  energy: 50
-  maxEnergy: 50
-  energyRegen: 1
+  lifeRegen: 4
+  energy: 9.5
+  maxEnergy: 52
+  energyRegen: 6.5
   moveSpeed: 5
   thougness: 1
   damage: 2
   cooldown: 1.5
-  regenCooldown: 7
+  regenCooldown: 4

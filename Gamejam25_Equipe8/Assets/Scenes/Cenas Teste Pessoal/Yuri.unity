@@ -232,13 +232,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 616314526387580362, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 512748898}
-    - target: {fileID: 616314526387580362, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
-      propertyPath: enemyStatus
-      value: 
-      objectReference: {fileID: 11400000, guid: 844a1bf56e29d0a408564559c28785ae, type: 2}
+      propertyPath: cost
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 898899983534522788, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

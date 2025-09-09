@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821bdfdac1f62464ab653834d2881b1e, type: 3}
   m_Name: EnemyStatus
   m_EditorClassIdentifier: 
-  life: 25
-  maxLife: 25
+  life: 0
+  maxLife: 14
   lifeRegen: 0
   energy: 0
   maxEnergy: 0
   energyRegen: 0
   moveSpeed: 0
   thougness: 0
-  damage: 29.29
+  damage: 6
   cooldown: 0
   regenCooldown: 0

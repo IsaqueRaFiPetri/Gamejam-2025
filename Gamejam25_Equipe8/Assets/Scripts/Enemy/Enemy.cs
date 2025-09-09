@@ -3,19 +3,18 @@ using UnityEngine.UI;
 using System.Collections;
 public class Enemy : MonoBehaviour
 {
-    public static Enemy instance;    
-    [SerializeField] Image lifeBar;    
+    public static Enemy instance;
+    [SerializeField] Image lifeBar;
     public Transform playerTransform;
-    public float moveSpeed = 3f;
+    public float moveSpeed = 2f;
     public BoxCollider2D player_Collider;
     private bool canDetectCollision = true;
     public CharacterStatus enemyStatus;
 
     void Start()
-    {   
+    {
         instance = this;
         enemyStatus.life = enemyStatus.maxLife;
-        playerTransform = FindFirstObjectByType<Troca_Personagens>().transform;
     }
     void Update()
     {
@@ -30,8 +29,8 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D player_Collider)
     {
-        if(player_Collider.gameObject.CompareTag("Player") && canDetectCollision)
-        {          
+        if (player_Collider.gameObject.CompareTag("Player") && canDetectCollision)
+        {
             Attack();
             canDetectCollision = false;
             StartCoroutine(ResetCollisionDetection());
@@ -49,8 +48,20 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamageenemy(float damage)
     {
-        enemyStatus.life -= damage;
-        if(enemyStatus.life <= 0)
+        if (!Troca_Personagens.instance.isHappy && !Troca_Personagens.instance.isBrave)
+        {
+            enemyStatus.life -= damage;
+        }
+        else if (Troca_Personagens.instance.isHappy)
+        {
+            enemyStatus.life -= damage - 1;
+        }
+        else if (Troca_Personagens.instance.isBrave)
+        {
+            enemyStatus.life -= damage + 1;
+        }
+
+        if (enemyStatus.life <= 0)
         {
             Destroy(gameObject);
         }

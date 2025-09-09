@@ -8,12 +8,14 @@ public class Tiro_BANG : MonoBehaviour
     public float projectileSpeed = 20f;
     public float fireRate = 0.5f;
     float nextFireTime = 0f;
-    [SerializeField] float cost;
+    [SerializeField] float cost = -1f;
     [SerializeField] CharacterStatus playerStats;
     public CharacterStatus enemyStatus;
+    PlayerStatus PlayerStatus;
     private void Start()
     {
-        mainCamera = FindFirstObjectByType<Camera>();       
+        mainCamera = FindFirstObjectByType<Camera>();
+        PlayerStatus = FindFirstObjectByType<PlayerStatus>();
     }
 
     void Update()
@@ -36,20 +38,34 @@ public class Tiro_BANG : MonoBehaviour
             }
 
             Shoot(direction);
-            nextFireTime = Time.time + fireRate;
+            nextFireTime = Time.time + fireRate;           
         }
+       
     }
 
 
     void Shoot(Vector2 direction)
     {
-        if(playerStats.energy >= cost)
+        
+        if (!Troca_Personagens.instance.isBrave && !Troca_Personagens.instance.isHappy)
+        {
+            cost = 4f;
+        }
+        else if(Troca_Personagens.instance.isBrave)
+        {
+            cost = 5f;
+        }
+        else if (Troca_Personagens.instance.isHappy)
+        {
+            cost = 3f;
+        }
+
+        if (playerStats.energy >= cost)
         {
             GameObject projectile = Instantiate(projectilePrefab, firePosition.position, Quaternion.identity);
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
 
             PlayerStatus.instance.ReduceEnergy(cost);
-
             if (rb != null)
             {
                 rb.linearVelocity = direction * projectileSpeed;
@@ -57,7 +73,6 @@ public class Tiro_BANG : MonoBehaviour
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
-
             Destroy(projectile, 1.5f);
         }
     }    
