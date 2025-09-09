@@ -1,16 +1,18 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Transform playerTransform;  
+    public float moveSpeed = 3f;       
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (playerTransform != null)
+        {           
+            Vector2 direction = (playerTransform.position - transform.position).normalized;
+           
+            transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
+        }
     }
 }
