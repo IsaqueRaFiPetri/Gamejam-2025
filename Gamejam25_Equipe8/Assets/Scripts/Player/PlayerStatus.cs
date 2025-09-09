@@ -50,12 +50,12 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         playerStatus.life -= damage;
     }
 
-    public void ReduceEnergy(int reduction)
+    public void ReduceEnergy(float reduction)
     {
         playerStatus.energy -= reduction;
     }
