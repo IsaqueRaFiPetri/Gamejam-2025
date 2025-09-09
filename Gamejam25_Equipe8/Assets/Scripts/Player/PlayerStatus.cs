@@ -32,18 +32,17 @@ public class PlayerStatus : MonoBehaviour
     void RegenerateLife()
     {
         lifeRegenTimer += Time.deltaTime;
-        if (lifeRegenTimer >= playerStatus.lifeRegenCooldown)
+        if (lifeRegenTimer >= playerStatus.regenCooldown)
         {
             playerStatus.life = Mathf.Min(playerStatus.life + playerStatus.lifeRegen, playerStatus.maxLife);
             lifeRegenTimer = 0f;
-            Debug.Log("Regenerou");
         }
     }
 
     void RegenerateEnergy()
     {
         energyRegenTimer += Time.deltaTime;
-        if (energyRegenTimer >= playerStatus.energyRegenCooldown)
+        if (energyRegenTimer >= playerStatus.regenCooldown)
         {
             playerStatus.energy = Mathf.Min(playerStatus.energy + playerStatus.energyRegen, playerStatus.maxEnergy);
             energyRegenTimer = 0f;
