@@ -443,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7542802524335543923}
   m_Layer: 0
-  m_Name: Barra_Energy
+  m_Name: Barra_Energy_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,7 +687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3467376177280159085}
   m_Layer: 0
-  m_Name: Barra_Life
+  m_Name: Barra_Life_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,18 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
-
 public class Enemy : MonoBehaviour
 {
-    public CharacterStatus enemyStatus;
+    public static Enemy instance;    
+    [SerializeField] Image lifeBar;    
     public Transform playerTransform;
     public float moveSpeed = 3f;
     public BoxCollider2D player_Collider;
     private bool canDetectCollision = true;
-    public CharacterStatus EnemyStatus;
+    public CharacterStatus enemyStatus;
 
     void Start()
-    {
-        EnemyStatus.life = EnemyStatus.maxLife;        
+    {   instance = this;
+        enemyStatus.life = enemyStatus.maxLife;        
     }
     void Update()
     {
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
 
             transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
         }
+        lifeBar.fillAmount = enemyStatus.life / enemyStatus.maxLife;
     }
 
     void OnCollisionStay2D(Collision2D player_Collider)
@@ -42,6 +44,14 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
-        PlayerStatus.instance.TakeDamage(enemyStatus.damage);
+        PlayerStatus.instance.TakeDamageplayer(enemyStatus.damage);
+    }
+    public void TakeDamageenemy(float damage)
+    {
+        enemyStatus.life -= damage;
+        if(enemyStatus.life <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

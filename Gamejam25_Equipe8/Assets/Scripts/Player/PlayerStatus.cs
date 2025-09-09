@@ -49,7 +49,7 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamageplayer(float damage)
     {
         playerStatus.life -= damage;
     }

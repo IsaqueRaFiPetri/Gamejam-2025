@@ -10,10 +10,10 @@ public class Tiro_BANG : MonoBehaviour
     float nextFireTime = 0f;
     [SerializeField] float cost;
     [SerializeField] CharacterStatus playerStats;
-
+    public CharacterStatus enemyStatus;
     private void Start()
     {
-        mainCamera = FindFirstObjectByType<Camera>();
+        mainCamera = FindFirstObjectByType<Camera>();       
     }
 
     void Update()
@@ -60,5 +60,5 @@ public class Tiro_BANG : MonoBehaviour
 
             Destroy(projectile, 1.5f);
         }
-    }
+    }    
 }

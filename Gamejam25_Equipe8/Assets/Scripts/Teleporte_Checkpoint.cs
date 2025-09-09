@@ -4,6 +4,7 @@ public class Teleporte_Checkpoint : MonoBehaviour
 {
     Troca_Personagens troca;
     public Transform Spawn;
+    public BoxCollider2D enemy_Collider;
     void Start()
     {
         troca = FindObjectOfType(typeof(Troca_Personagens)) as Troca_Personagens;
@@ -18,5 +19,5 @@ public class Teleporte_Checkpoint : MonoBehaviour
                 troca.Personagens_Object.transform.position = Spawn.position;
             }
         }
-    }
+    }   
 }
