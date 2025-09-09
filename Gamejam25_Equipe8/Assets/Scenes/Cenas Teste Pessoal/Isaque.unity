@@ -300,12 +300,12 @@ GameObject:
   - component: {fileID: 980480998}
   - component: {fileID: 980480999}
   m_Layer: 3
-  m_Name: Player (1)
+  m_Name: Sad
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &980480998
 Transform:
   m_ObjectHideFlags: 0
@@ -387,12 +387,12 @@ GameObject:
   - component: {fileID: 1239524035}
   - component: {fileID: 1239524036}
   m_Layer: 3
-  m_Name: Player (4)
+  m_Name: Happy
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1239524035
 Transform:
   m_ObjectHideFlags: 0
@@ -474,12 +474,12 @@ GameObject:
   - component: {fileID: 1336633677}
   - component: {fileID: 1336633678}
   m_Layer: 3
-  m_Name: Player (2)
+  m_Name: Brave
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1336633677
 Transform:
   m_ObjectHideFlags: 0
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 1365534988}
   - component: {fileID: 1365534987}
   m_Layer: 3
-  m_Name: Player
+  m_Name: Normal
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -755,12 +755,12 @@ GameObject:
   - component: {fileID: 1620971296}
   - component: {fileID: 1620971297}
   m_Layer: 3
-  m_Name: Player (3)
+  m_Name: Fear
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1620971296
 Transform:
   m_ObjectHideFlags: 0
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 2118361566}
   - component: {fileID: 2118361565}
   m_Layer: 3
-  m_Name: GameObject
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -865,8 +865,8 @@ Transform:
   - {fileID: 1365534988}
   - {fileID: 980480998}
   - {fileID: 1336633677}
-  - {fileID: 1620971296}
   - {fileID: 1239524035}
+  - {fileID: 1620971296}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2118361565
@@ -881,6 +881,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3972f258cb21547b8c69eae3a1e46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNormal: 1
+  isSad: 0
+  isBrave: 0
+  isHappy: 0
+  isFear: 0
   Sad_Object: {fileID: 980480997}
   Brave_Object: {fileID: 1336633676}
   Normal_Object: {fileID: 1365534983}
@@ -905,7 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12219568cb7b1d84ba0a25d0e79a5b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  playerStatus: {fileID: 11400000, guid: 164acb204e16fa741a9191038096ad0b, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

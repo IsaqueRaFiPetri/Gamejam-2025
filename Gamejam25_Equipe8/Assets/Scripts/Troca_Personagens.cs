@@ -9,7 +9,8 @@ public enum Emotions
 }
 public class Troca_Personagens : MonoBehaviour
 {
-    bool isNormal = true, isSad, isBrave, isHappy, isFear;
+    public static Troca_Personagens instance;
+    [HideInInspector] public bool isNormal = true, isSad, isBrave, isHappy, isFear;
 
     [Header("Objeto Modos")]
     public GameObject Sad_Object, Brave_Object, Normal_Object, Medo_Object, Happy_Object, Personagens_Object;
@@ -29,6 +30,7 @@ public class Troca_Personagens : MonoBehaviour
     private void Awake()
     {
         playerActionsInput = new PlayerInputActions();
+        instance = this;
     }
 
     void Start()
