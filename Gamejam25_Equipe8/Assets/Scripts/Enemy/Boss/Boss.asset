@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   life: 0
-  maxLife: 0
+  maxLife: 600
   lifeRegen: 0
   energy: 0
   maxEnergy: 0

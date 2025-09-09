@@ -7,7 +7,6 @@ public class Ataque3Boss : MonoBehaviour
     public Transform maoDireita;
     public Transform cabeca;
     public GameObject laserPrefab;
-    public LineRenderer quadradoRenderer;
 
     [Header("Configura��o")]
     public float laserSpeed = 20f;
@@ -21,7 +20,6 @@ public class Ataque3Boss : MonoBehaviour
         if (isAttacking) return;
         isAttacking = true;
         InvokeRepeating(nameof(DispararLasers), 0f, 0.5f);
-        if (quadradoRenderer != null) quadradoRenderer.enabled = true;
     }
 
     public void StopAttack()
@@ -29,7 +27,6 @@ public class Ataque3Boss : MonoBehaviour
         if (!isAttacking) return;
         isAttacking = false;
         CancelInvoke(nameof(DispararLasers));
-        if (quadradoRenderer != null) quadradoRenderer.enabled = false;
     }
 
     private void DispararLasers()
@@ -51,7 +48,6 @@ public class Ataque3Boss : MonoBehaviour
 
     private void DesenharQuadrado()
     {
-        if (quadradoRenderer == null) return;
 
         Vector3[] pontos = new Vector3[5];
         float size = 1f;
@@ -60,7 +56,5 @@ public class Ataque3Boss : MonoBehaviour
         pontos[2] = cabeca.position + new Vector3(size, size, 0);
         pontos[3] = cabeca.position + new Vector3(size, -size, 0);
         pontos[4] = pontos[0];
-        quadradoRenderer.positionCount = pontos.Length;
-        quadradoRenderer.SetPositions(pontos);
     }
 }

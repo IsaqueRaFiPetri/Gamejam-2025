@@ -33,32 +33,17 @@ public class SetPause : MonoBehaviour
         playerActionsInput.Disable();
     }
 
-    void SetCursor()
-    {
-        if (isPaused)
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        Cursor.visible = isPaused;
-    }
-
     public void Pause(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             OnPause.Invoke();
             SetPaused(true);
-            SetCursor();
         }
         if (context.canceled)
         {
             OnUnpause.Invoke();
             SetPaused(false);
-            SetCursor();
         }
     }
 
