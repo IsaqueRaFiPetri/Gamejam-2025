@@ -379,10 +379,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2497520161208476587, guid: 003e80cb3c534cc409fdd910de048e39, type: 3}
+      propertyPath: m_Name
+      value: Barra_Energy_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190062198252410361, guid: 003e80cb3c534cc409fdd910de048e39, type: 3}
+      propertyPath: m_Name
+      value: Barra_Life_Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4759682494217163937, guid: 003e80cb3c534cc409fdd910de048e39, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 512748898}
+    - target: {fileID: 4759682494217163937, guid: 003e80cb3c534cc409fdd910de048e39, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6447706318746061652, guid: 003e80cb3c534cc409fdd910de048e39, type: 3}
       propertyPath: m_Pivot.x
       value: 0
