@@ -6,7 +6,9 @@ public class Projetil : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+
         Enemy enemy = other.GetComponent<Enemy>();
+
         if (enemy != null)
         {
             if (Troca_Personagens.instance.isHappy)
@@ -16,6 +18,10 @@ public class Projetil : MonoBehaviour
             else if (Troca_Personagens.instance.isBrave)
             {
                 enemy.TakeDamageenemy(playerStats.damage * 2);
+            }
+            else if (Troca_Personagens.instance.isFear)
+            {
+                enemy.TakeDamageenemy(playerStats.damage  /2);
             }
             else 
             {

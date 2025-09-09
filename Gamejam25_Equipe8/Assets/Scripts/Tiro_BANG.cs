@@ -38,7 +38,22 @@ public class Tiro_BANG : MonoBehaviour
             }
 
             Shoot(direction);
-            nextFireTime = Time.time + fireRate;           
+            if (Troca_Personagens.instance.isSad)
+            {
+                nextFireTime = Time.time + fireRate + 0.5f;
+            }
+            if (Troca_Personagens.instance.isFear)
+            {
+                nextFireTime = Time.time + fireRate - 0.5f;
+            }
+            if (Troca_Personagens.instance.isBrave)
+            {
+                nextFireTime = Time.time + fireRate + 0.5f;
+            }
+            else
+            {
+                nextFireTime = Time.time + fireRate;
+            }
         }
        
     }
@@ -47,7 +62,7 @@ public class Tiro_BANG : MonoBehaviour
     void Shoot(Vector2 direction)
     {
         
-        if (!Troca_Personagens.instance.isBrave && !Troca_Personagens.instance.isHappy && !Troca_Personagens.instance.isFear)
+        if (!Troca_Personagens.instance.isBrave && !Troca_Personagens.instance.isHappy && !Troca_Personagens.instance.isFear && !Troca_Personagens.instance.isSad)
         {
             cost = 4f;
         }
@@ -62,6 +77,10 @@ public class Tiro_BANG : MonoBehaviour
         else if (Troca_Personagens.instance.isFear)
         {
             cost = 2f;
+        }
+        else if (Troca_Personagens.instance.isSad)
+        {
+            cost = 5f;
         }
 
         if (playerStats.energy >= cost)

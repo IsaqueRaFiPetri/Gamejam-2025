@@ -41,11 +41,8 @@ public class Enemy : MonoBehaviour
     }
 
     void Attack()
-    {
-        if (!Troca_Personagens.instance.isSad)
-        {
-            PlayerStatus.instance.TakeDamageplayer(enemyStatus.damage);
-        }        
+    {       
+       PlayerStatus.instance.TakeDamageplayer(enemyStatus.damage);             
     }
     public void TakeDamageenemy(float damage)
     {
