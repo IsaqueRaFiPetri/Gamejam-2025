@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class Attack1 : MonoBehaviour, IBossAttack
+[CreateAssetMenu(menuName = "Boss/Attacks/Attack1")]
+public class Attack1SO : BossAttack
 {
-    public float speed = 3f;
+    public float lungeSpeed = 3f;
 
-    public IEnumerator Execute(Transform head, Transform leftHand, Transform rightHand, Transform player)
+    public override IEnumerator Execute(Transform head, Transform leftHand, Transform rightHand, Transform player)
     {
         Transform[] parts = { head, leftHand, rightHand };
         int count = Random.Range(1, parts.Length + 1);
@@ -19,7 +20,7 @@ public class Attack1 : MonoBehaviour, IBossAttack
             float t = 0f;
             while (t < 1f)
             {
-                t += Time.deltaTime * speed;
+                t += Time.deltaTime * lungeSpeed;
                 part.position = Vector3.Lerp(start, target, t);
                 yield return null;
             }
@@ -27,7 +28,7 @@ public class Attack1 : MonoBehaviour, IBossAttack
             t = 0f;
             while (t < 1f)
             {
-                t += Time.deltaTime * speed;
+                t += Time.deltaTime * lungeSpeed;
                 part.position = Vector3.Lerp(target, start, t);
                 yield return null;
             }
