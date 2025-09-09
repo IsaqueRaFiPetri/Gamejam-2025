@@ -1,50 +1,65 @@
+using System.Collections;
 using UnityEngine;
+
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Configuração do Spawner")]
-    public GameObject enemyPrefab;   // Prefab do inimigo
-    public int maxEnemies = 5;       // Número máximo de inimigos que podem nascer
+    [SerializeField] private GameObject EnemyPrefab;
+    [SerializeField] private float EnemySpawnCoolDown = 1.5f;
+    [SerializeField] private int maxEnemies = 10;
 
-    private int spawnedEnemies = 0;  // Contador de inimigos já spawnados
-    private Collider2D areaCollider; // Collider usado para área de spawn
+    private Collider2D areaCollider;
+    private int enemyCount = 0;
+    bool isSpawning;
+    private void Awake()
+    {
+        areaCollider = GetComponent<Collider2D>();
+
+        if (areaCollider == null)
+        {
+            Debug.LogError("Nenhum Collider2D encontrado no spawner!");
+        }
+    }
 
     private void Start()
     {
-        // Pega o collider do objeto que tem o script
-        areaCollider = GetComponent<Collider2D>();
+        
+    }
 
-        if (areaCollider == null || !areaCollider.isTrigger)
+    private IEnumerator SpawnEnemy(float interval, GameObject Enemy)
+    {
+        while (enemyCount < maxEnemies)
         {
-            Debug.LogError("Este objeto precisa ter um Collider2D marcado como 'Is Trigger'.");
+            yield return new WaitForSeconds(interval);
+
+            Vector2 spawnPos = GetRandomPointInCollider(areaCollider);
+
+            Instantiate(Enemy, spawnPos, Quaternion.identity);
+            enemyCount++;
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private Vector2 GetRandomPointInCollider(Collider2D col)
     {
-        if (other.CompareTag("Player"))
+        Bounds bounds = col.bounds;
+        Vector2 point;
+        do
         {
-            if (spawnedEnemies < maxEnemies)
-            {
-                SpawnEnemy();
-            }
+            point = new Vector2(
+                Random.Range(bounds.min.x, bounds.max.x),
+                Random.Range(bounds.min.y, bounds.max.y)
+            );
         }
+        while (!col.OverlapPoint(point)); 
+        return point;
     }
-
-    void SpawnEnemy()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Vector2 randomPos = GetRandomPointInArea();
-        Instantiate(enemyPrefab, randomPos, Quaternion.identity);
-        spawnedEnemies++;
-    }
+        print(collision);
+        if (isSpawning)
+            return;
 
-    Vector2 GetRandomPointInArea()
-    {
-        Bounds bounds = areaCollider.bounds;
-
-        float x = Random.Range(bounds.min.x, bounds.max.x);
-        float y = Random.Range(bounds.min.y, bounds.max.y);
-
-        return new Vector2(x, y);
+        StartCoroutine(SpawnEnemy(EnemySpawnCoolDown, EnemyPrefab));
+        isSpawning = true;
     }
 }

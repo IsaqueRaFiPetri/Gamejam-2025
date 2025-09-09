@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovTopdown : MonoBehaviour
 {
     [SerializeField] CharacterStatus playerStatus;
-
+    Rigidbody2D rb;
     Vector2 movementInput;
 
     PlayerInputActions playerActionsInput;
@@ -13,6 +13,7 @@ public class PlayerMovTopdown : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         troca = FindFirstObjectByType(typeof(Troca_Personagens)) as Troca_Personagens;  
     }
     private void Awake()
@@ -28,6 +29,8 @@ public class PlayerMovTopdown : MonoBehaviour
 
     private void FixedUpdate()
     {
+        rb.linearVelocity = movementInput * playerStatus.moveSpeed;
+        /*
         if (Troca_Personagens.instance.isFear)
         {
             Vector3 newPos = transform.position + new Vector3(movementInput.x, movementInput.y, 0) * playerStatus.moveSpeed * 3 * Time.deltaTime;
@@ -55,5 +58,6 @@ public class PlayerMovTopdown : MonoBehaviour
             playerActionsInput.Player.Move.performed += OnMove;
             playerActionsInput.Player.Move.canceled += OnMove;
         }
+        */
     }
 }
