@@ -92,6 +92,11 @@ public class Troca_Personagens : MonoBehaviour
         Normal_Object.SetActive(isNormal);
         Medo_Object.SetActive(isFear);
         Happy_Object.SetActive(isHappy);
+        sad.gameObject.SetActive(isSad);
+        brave.gameObject.SetActive(isBrave);
+        normal.gameObject.SetActive(isNormal);
+        fear.gameObject.SetActive(isFear);
+        happy.gameObject.SetActive(isHappy);
     }
 
     void PlaySound(AudioClip clip)
