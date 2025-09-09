@@ -191,6 +191,17 @@
                 },
                 {
                     "name": "",
+                    "id": "4a0a313b-0f37-49b8-baab-926c766e7da1",
+                    "path": "<Keyboard>/numpad0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "371ee7fa-89c0-494c-87a6-d393e01d3da9",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -213,8 +224,30 @@
                 },
                 {
                     "name": "",
+                    "id": "d3fd0480-6d61-41f5-adcb-20ee551783f3",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeNormal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5740d4d3-51b0-4792-95ef-3eee67d16d98",
                     "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeSad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2aa2f1c5-5593-4351-bb23-a1634fc2d462",
+                    "path": "<Keyboard>/numpad2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -235,6 +268,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ca401046-ec87-463a-bcf7-b0c43470ede7",
+                    "path": "<Keyboard>/numpad3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeBrave",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5c995b4b-27f2-48e1-b2e0-741a6967b87c",
                     "path": "<Keyboard>/4",
                     "interactions": "",
@@ -246,8 +290,30 @@
                 },
                 {
                     "name": "",
+                    "id": "234fee33-a59f-4b32-b335-704804c5e8a3",
+                    "path": "<Keyboard>/numpad4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeHappy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b0b582d5-03ef-40eb-8ec6-9fe1aa0685de",
                     "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeFear",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a22f54f5-1024-4869-a759-01f7adeedb6a",
+                    "path": "<Keyboard>/numpad5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
