@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: PlayerStatus
   m_EditorClassIdentifier: 
   life: 50
+  maxLife: 0
   lifeRegen: 5
+  lifeRegenCooldown: 8.5
   energy: 50
+  maxEnergy: 0
   energyRegen: 1
+  energyRegenCooldown: 8.5
   moveSpeed: 5
   thougness: 1
   damage: 1.5
