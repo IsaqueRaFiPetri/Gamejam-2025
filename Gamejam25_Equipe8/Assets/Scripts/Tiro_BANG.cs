@@ -14,6 +14,7 @@ public class Tiro_BANG : MonoBehaviour
     private void Start()
     {
         troca = FindFirstObjectByType<Troca_Personagens>();
+        mainCamera = FindFirstObjectByType<Camera>();
     }
 
     void Update()
