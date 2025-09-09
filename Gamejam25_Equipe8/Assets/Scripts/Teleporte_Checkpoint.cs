@@ -7,7 +7,7 @@ public class Teleporte_Checkpoint : MonoBehaviour
     public BoxCollider2D enemy_Collider;
     void Start()
     {
-        troca = FindObjectOfType(typeof(Troca_Personagens)) as Troca_Personagens;
+        troca = FindFirstObjectByType(typeof(Troca_Personagens)) as Troca_Personagens;
     }
 
     void OnTriggerEnter2D(Collider2D other)

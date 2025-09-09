@@ -12,8 +12,10 @@ public class Enemy : MonoBehaviour
     public CharacterStatus enemyStatus;
 
     void Start()
-    {   instance = this;
-        enemyStatus.life = enemyStatus.maxLife;        
+    {   
+        instance = this;
+        enemyStatus.life = enemyStatus.maxLife;
+        playerTransform = FindFirstObjectByType<Troca_Personagens>().transform;
     }
     void Update()
     {

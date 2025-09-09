@@ -1217,6 +1217,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 445864831}
+    - target: {fileID: 725405937515495898, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4854397496335690116, guid: 9d8ee2797c940c14889f25bfe2f44285, type: 3}
     - target: {fileID: 898899983534522788, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1277,6 +1281,22 @@ PrefabInstance:
       propertyPath: normal
       value: 
       objectReference: {fileID: 651058315}
+    - target: {fileID: 1596857288903503438, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596857288903503438, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596857288903503438, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.262
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596857288903503438, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.162
+      objectReference: {fileID: 0}
     - target: {fileID: 3501849508753563578, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
       propertyPath: m_Name
       value: Player
