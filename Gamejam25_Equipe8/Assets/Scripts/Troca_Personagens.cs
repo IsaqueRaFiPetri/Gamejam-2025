@@ -39,11 +39,24 @@ public class Troca_Personagens : MonoBehaviour
 
         switch (newEmotion)
         {
-            case Emotions.Normal: isNormal = true; break;
-            case Emotions.Sad: isSad = true; break;
-            case Emotions.Brave: isBrave = true; break;
-            case Emotions.Fear: isFear = true; break;
-            case Emotions.Happy: isHappy = true; break;
+            case Emotions.Normal: 
+                isNormal = true; 
+                break;
+            case Emotions.Sad: 
+                isSad = true; 
+                break;
+            case Emotions.Brave: 
+                isBrave = true;
+                StartCoroutine(SwapBack(transformationTime));
+                break;
+            case Emotions.Fear: 
+                isFear = true;
+                StartCoroutine(SwapBack(transformationTime));
+                break;
+            case Emotions.Happy: 
+                isHappy = true;
+                StartCoroutine(SwapBack(transformationTime));
+                break;
         }
 
         // Marca emoção como coletada
@@ -52,8 +65,8 @@ public class Troca_Personagens : MonoBehaviour
         PlaySound(transformationSound);
         UpdateObjects();
 
-        if (newEmotion != Emotions.Normal)
-            StartCoroutine(SwapBack(transformationTime));
+        
+            
     }
 
     void ResetEmotions()

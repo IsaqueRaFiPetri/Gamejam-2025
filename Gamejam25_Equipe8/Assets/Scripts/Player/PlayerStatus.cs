@@ -96,7 +96,7 @@ public class PlayerStatus : MonoBehaviour
             Troca_Personagens.instance.ActivateSad();
             if (playerStatus.emotion <= 0f)
             {
-                playerStatus.life = 0f;
+                TakeDamageplayer(playerStatus.damage);
             }
         }
         else if(playerStatus.emotion >= 75)
