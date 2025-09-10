@@ -229,14 +229,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 616314526387580362, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
-      propertyPath: Bang
-      value: 
-      objectReference: {fileID: 8300000, guid: 93ec707060ab40e4e9032e6a5fed86a9, type: 3}
-    - target: {fileID: 616314526387580362, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
-      propertyPath: Tiro
-      value: 
-      objectReference: {fileID: 8300000, guid: ae737618ee794f4428054d5b1a1badda, type: 3}
     - target: {fileID: 898899983534522788, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
