@@ -15,7 +15,7 @@ public class Projetil : MonoBehaviour
 
         audioSource.playOnAwake = false;
         audioSource.loop = false;
-        audioSource.volume = 0.3f;
+        audioSource.volume = 0.4f;
     }
     void OnTriggerEnter2D(Collider2D other)
     {
