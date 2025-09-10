@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class PlayerMovTopdown : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class PlayerMovTopdown : MonoBehaviour
 
             if (sonsDePassos.Length > 0)
             {
+                audioSource.volume = 0.3f;
                 audioSource.PlayOneShot(sonsDePassos[passoIndex]);
 
                 passoIndex++;
