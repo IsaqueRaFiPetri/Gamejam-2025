@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 821bdfdac1f62464ab653834d2881b1e, type: 3}
-  m_Name: BasicEnemy
+  m_Name: Enemy_Though
   m_EditorClassIdentifier: 
-  life: 14
-  maxLife: 14
+  life: 13
+  maxLife: 30
   lifeRegen: 0
   energy: 0
   maxEnergy: 0
@@ -23,8 +23,8 @@ MonoBehaviour:
   emotionRegen: 0
   emotionTime: 0
   allEmotionsCollected: 0
-  moveSpeed: 0
-  toughness: 1
-  damage: 6
-  cooldown: 1.5
+  moveSpeed: 0.5
+  toughness: 2
+  damage: 9
+  cooldown: 2.5
   regenCooldown: 0

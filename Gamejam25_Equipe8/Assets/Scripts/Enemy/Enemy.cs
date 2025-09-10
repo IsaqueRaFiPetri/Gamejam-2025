@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public Transform playerTransform;
-    public float moveSpeed = 2f;
     public CharacterStatus enemyStatus;
     public Animator animator; // Animator do inimigo
     private Rigidbody2D rb;
@@ -60,7 +59,7 @@ public class Enemy : MonoBehaviour
     {
         if (canMove)
         {
-            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + moveDirection * enemyStatus.moveSpeed * Time.fixedDeltaTime);
         }
     }
 

@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 821bdfdac1f62464ab653834d2881b1e, type: 3}
-  m_Name: PlayerStatus
+  m_Name: Enemy_Basic
   m_EditorClassIdentifier: 
   life: 0
-  maxLife: 75
-  lifeRegen: 4
+  maxLife: 20
+  lifeRegen: 0
   energy: 0
-  maxEnergy: 100
-  energyRegen: 6.5
-  emotion: 69.490654
-  maxEmotion: 100
-  emotionRegen: 5
-  emotionTime: 7
+  maxEnergy: 0
+  energyRegen: 0
+  emotion: 0
+  maxEmotion: 0
+  emotionRegen: 0
+  emotionTime: 0
   allEmotionsCollected: 0
   moveSpeed: 5
   toughness: 1
-  damage: 2
+  damage: 6
   cooldown: 1.5
-  regenCooldown: 1
+  regenCooldown: 0
