@@ -13,9 +13,16 @@ public class CharacterStatus : ScriptableObject
     public float maxEnergy;
     public float energyRegen;
 
-    [Header("others Variables")]
+    [Header("Emotional")]
+    [HideInInspector] public float emotion;
+    public float maxEmotion;
+    public float emotionRegen;
+    public float emotionTime;
+    [HideInInspector] public bool allEmotionsCollected;
+
+    [Header("Others Variables")]
     public float moveSpeed;
-    public float thougness;
+    public float toughness;
     public float damage;
     public float cooldown;
     public float regenCooldown;

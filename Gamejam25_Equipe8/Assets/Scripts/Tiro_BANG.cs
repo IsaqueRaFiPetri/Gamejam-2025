@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Tiro_BANG : MonoBehaviour
 {
-    [SerializeField] Camera mainCamera;
+    Camera mainCamera;
     public GameObject projectilePrefab;
     public Transform firePosition;
     public float projectileSpeed = 20f;
@@ -10,12 +10,12 @@ public class Tiro_BANG : MonoBehaviour
     float nextFireTime = 0f;
     [SerializeField] float cost = -1f;
     [SerializeField] CharacterStatus playerStats;
-    public CharacterStatus enemyStatus;
     PlayerStatus PlayerStatus;
+
     private void Start()
     {
-        mainCamera = FindFirstObjectByType<Camera>();
-        PlayerStatus = FindFirstObjectByType<PlayerStatus>();
+        if (mainCamera == null)
+            mainCamera = Camera.main;
     }
 
     void Update()
@@ -25,12 +25,12 @@ public class Tiro_BANG : MonoBehaviour
 
         Vector2 lookDir = mouseWorldPosition - firePosition.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-
+        print(angle);
         firePosition.rotation = Quaternion.Euler(0, 0, angle);
+        Vector2 direction = lookDir.normalized;
 
         if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
         {
-            Vector2 direction = lookDir.normalized;
 
             if (Troca_Personagens.instance.isFear)
             {

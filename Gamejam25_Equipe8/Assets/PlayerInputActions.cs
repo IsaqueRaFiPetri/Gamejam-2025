@@ -128,15 +128,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ChangeSad"",
-                    ""type"": ""Button"",
-                    ""id"": ""890c0cbb-f2f4-405c-87db-4cac6fd6a793"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""ChangeBrave"",
                     ""type"": ""Button"",
                     ""id"": ""2aa8a590-796d-42b2-a102-80fd05efa0b7"",
@@ -321,30 +312,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5740d4d3-51b0-4792-95ef-3eee67d16d98"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeSad"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2aa2f1c5-5593-4351-bb23-a1634fc2d462"",
-                    ""path"": ""<Keyboard>/numpad2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeSad"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""0c73d6d3-983a-4e8e-a7c6-4a0eedcccd0b"",
-                    ""path"": ""<Keyboard>/3"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -355,7 +324,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ca401046-ec87-463a-bcf7-b0c43470ede7"",
-                    ""path"": ""<Keyboard>/numpad3"",
+                    ""path"": ""<Keyboard>/numpad2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -366,7 +335,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5c995b4b-27f2-48e1-b2e0-741a6967b87c"",
-                    ""path"": ""<Keyboard>/4"",
+                    ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -377,7 +346,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""234fee33-a59f-4b32-b335-704804c5e8a3"",
-                    ""path"": ""<Keyboard>/numpad4"",
+                    ""path"": ""<Keyboard>/numpad3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -388,7 +357,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b0b582d5-03ef-40eb-8ec6-9fe1aa0685de"",
-                    ""path"": ""<Keyboard>/5"",
+                    ""path"": ""<Keyboard>/4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -399,7 +368,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a22f54f5-1024-4869-a759-01f7adeedb6a"",
-                    ""path"": ""<Keyboard>/numpad5"",
+                    ""path"": ""<Keyboard>/numpad4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -479,7 +448,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_ChangeNormal = m_Player.FindAction("ChangeNormal", throwIfNotFound: true);
-        m_Player_ChangeSad = m_Player.FindAction("ChangeSad", throwIfNotFound: true);
         m_Player_ChangeBrave = m_Player.FindAction("ChangeBrave", throwIfNotFound: true);
         m_Player_ChangeHappy = m_Player.FindAction("ChangeHappy", throwIfNotFound: true);
         m_Player_ChangeFear = m_Player.FindAction("ChangeFear", throwIfNotFound: true);
@@ -567,7 +535,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_ChangeNormal;
-    private readonly InputAction m_Player_ChangeSad;
     private readonly InputAction m_Player_ChangeBrave;
     private readonly InputAction m_Player_ChangeHappy;
     private readonly InputAction m_Player_ChangeFear;
@@ -598,10 +565,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/ChangeNormal".
         /// </summary>
         public InputAction @ChangeNormal => m_Wrapper.m_Player_ChangeNormal;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/ChangeSad".
-        /// </summary>
-        public InputAction @ChangeSad => m_Wrapper.m_Player_ChangeSad;
         /// <summary>
         /// Provides access to the underlying input action "Player/ChangeBrave".
         /// </summary>
@@ -652,9 +615,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ChangeNormal.started += instance.OnChangeNormal;
             @ChangeNormal.performed += instance.OnChangeNormal;
             @ChangeNormal.canceled += instance.OnChangeNormal;
-            @ChangeSad.started += instance.OnChangeSad;
-            @ChangeSad.performed += instance.OnChangeSad;
-            @ChangeSad.canceled += instance.OnChangeSad;
             @ChangeBrave.started += instance.OnChangeBrave;
             @ChangeBrave.performed += instance.OnChangeBrave;
             @ChangeBrave.canceled += instance.OnChangeBrave;
@@ -687,9 +647,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ChangeNormal.started -= instance.OnChangeNormal;
             @ChangeNormal.performed -= instance.OnChangeNormal;
             @ChangeNormal.canceled -= instance.OnChangeNormal;
-            @ChangeSad.started -= instance.OnChangeSad;
-            @ChangeSad.performed -= instance.OnChangeSad;
-            @ChangeSad.canceled -= instance.OnChangeSad;
             @ChangeBrave.started -= instance.OnChangeBrave;
             @ChangeBrave.performed -= instance.OnChangeBrave;
             @ChangeBrave.canceled -= instance.OnChangeBrave;
@@ -832,13 +789,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnChangeNormal(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "ChangeSad" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnChangeSad(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "ChangeBrave" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

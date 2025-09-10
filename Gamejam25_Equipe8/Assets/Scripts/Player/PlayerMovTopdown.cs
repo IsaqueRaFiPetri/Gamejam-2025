@@ -26,4 +26,12 @@ public class PlayerMovTopdown : MonoBehaviour
         else
             rb.linearVelocity = movementInput * playerStatus.moveSpeed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Enemy>())
+        {
+            Troca_Personagens.instance.Swap(Emotions.Fear);
+        }
+    }
 }

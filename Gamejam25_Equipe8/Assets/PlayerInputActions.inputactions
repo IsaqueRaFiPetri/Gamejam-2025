@@ -42,15 +42,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ChangeSad",
-                    "type": "Button",
-                    "id": "890c0cbb-f2f4-405c-87db-4cac6fd6a793",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ChangeBrave",
                     "type": "Button",
                     "id": "2aa8a590-796d-42b2-a102-80fd05efa0b7",
@@ -235,30 +226,8 @@
                 },
                 {
                     "name": "",
-                    "id": "5740d4d3-51b0-4792-95ef-3eee67d16d98",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeSad",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2aa2f1c5-5593-4351-bb23-a1634fc2d462",
-                    "path": "<Keyboard>/numpad2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeSad",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0c73d6d3-983a-4e8e-a7c6-4a0eedcccd0b",
-                    "path": "<Keyboard>/3",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -269,7 +238,7 @@
                 {
                     "name": "",
                     "id": "ca401046-ec87-463a-bcf7-b0c43470ede7",
-                    "path": "<Keyboard>/numpad3",
+                    "path": "<Keyboard>/numpad2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -280,7 +249,7 @@
                 {
                     "name": "",
                     "id": "5c995b4b-27f2-48e1-b2e0-741a6967b87c",
-                    "path": "<Keyboard>/4",
+                    "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -291,7 +260,7 @@
                 {
                     "name": "",
                     "id": "234fee33-a59f-4b32-b335-704804c5e8a3",
-                    "path": "<Keyboard>/numpad4",
+                    "path": "<Keyboard>/numpad3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -302,7 +271,7 @@
                 {
                     "name": "",
                     "id": "b0b582d5-03ef-40eb-8ec6-9fe1aa0685de",
-                    "path": "<Keyboard>/5",
+                    "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -313,7 +282,7 @@
                 {
                     "name": "",
                     "id": "a22f54f5-1024-4869-a759-01f7adeedb6a",
-                    "path": "<Keyboard>/numpad5",
+                    "path": "<Keyboard>/numpad4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -216,7 +216,6 @@ Transform:
   - {fileID: 3898883590398897259}
   - {fileID: 1596857288903503438}
   - {fileID: 7359296324455627466}
-  - {fileID: 7997424035463667940}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5171128921991368982
@@ -249,12 +248,12 @@ MonoBehaviour:
   isBrave: 0
   isHappy: 0
   isFear: 0
+  transformationTime: 0
   Sad_Object: {fileID: 3018751267698215599}
   Brave_Object: {fileID: 5341671534727648811}
   Normal_Object: {fileID: 4303752272063290337}
-  Medo_Object: {fileID: 3078500446279181343}
+  Fear_Object: {fileID: 3078500446279181343}
   Happy_Object: {fileID: 8446636866096070355}
-  Personagens_Object: {fileID: 3501849508753563578}
   normal: {fileID: 0}
   sad: {fileID: 0}
   brave: {fileID: 0}
@@ -322,6 +321,7 @@ MonoBehaviour:
   playerStatus: {fileID: 11400000, guid: 164acb204e16fa741a9191038096ad0b, type: 2}
   lifeBar: {fileID: 0}
   energyBar: {fileID: 0}
+  emotionBar: {fileID: 0}
 --- !u!50 &678956799541258614
 Rigidbody2D:
   serializedVersion: 5
@@ -402,10 +402,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 82a6d99f-4e71-4160-bb58-a94a6af2ad56
     m_ActionName: 'Player/ChangeNormal[/Keyboard/1]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 890c0cbb-f2f4-405c-87db-4cac6fd6a793
-    m_ActionName: 'Player/ChangeSad[/Keyboard/2]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 2aa8a590-796d-42b2-a102-80fd05efa0b7
@@ -754,7 +750,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 4854397496335690116, guid: 9d8ee2797c940c14889f25bfe2f44285, type: 3}
-  m_Color: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -776,151 +772,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72c8d40ca60cec499381c78ee3bdd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  projectilePrefab: {fileID: 5432773568017726156, guid: b939c38c8f0b3dd4a87e44f007211701, type: 3}
+  projectilePrefab: {fileID: 2678305713922886567, guid: 2c9bbe68af1674f4aa8edfa23f6e7ba6, type: 3}
   firePosition: {fileID: 1596857288903503438}
   projectileSpeed: 20
   fireRate: 0.5
   cost: 0
   playerStats: {fileID: 11400000, guid: 164acb204e16fa741a9191038096ad0b, type: 2}
-  enemyStatus: {fileID: 0}
---- !u!1 &7521233523559297772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7997424035463667940}
-  - component: {fileID: 5883140973667254465}
-  - component: {fileID: 1223817539543736810}
-  - component: {fileID: 852767374975092571}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7997424035463667940
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521233523559297772}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.666667}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 898899983534522788}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &5883140973667254465
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521233523559297772}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!81 &1223817539543736810
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521233523559297772}
-  m_Enabled: 1
---- !u!114 &852767374975092571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521233523559297772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &8446636866096070355
 GameObject:
   m_ObjectHideFlags: 0

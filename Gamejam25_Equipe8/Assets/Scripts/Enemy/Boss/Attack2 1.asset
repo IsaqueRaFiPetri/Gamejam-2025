@@ -9,17 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 821bdfdac1f62464ab653834d2881b1e, type: 3}
-  m_Name: Boss
+  m_Script: {fileID: 11500000, guid: d95c745692341eb48a21c39164351dcf, type: 3}
+  m_Name: Attack2 1
   m_EditorClassIdentifier: 
-  life: 600
-  maxLife: 600
-  lifeRegen: 0
-  energy: 0
-  maxEnergy: 0
-  energyRegen: 0
-  moveSpeed: 3
-  thougness: 0
-  damage: 0
-  cooldown: 15
-  regenCooldown: 0
+  projectilePrefab: {fileID: 5432773568017726156, guid: b939c38c8f0b3dd4a87e44f007211701, type: 3}
+  projectileSpeed: 8

@@ -1,97 +1,74 @@
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public enum Emotions
 {
     Normal, Sad, Brave, Fear, Happy
 }
+
 public class Troca_Personagens : MonoBehaviour
 {
     public static Troca_Personagens instance;
+
     [HideInInspector] public bool isNormal = true, isSad, isBrave, isHappy, isFear;
 
-    [Header("Objeto Modos")]
-    public GameObject Sad_Object, Brave_Object, Normal_Object, Medo_Object, Happy_Object, Personagens_Object;
+    [SerializeField] float transformationTime;
 
-    [Header("Imagem Modos")]
+    [Header("Objetos de Personagem")]
+    public GameObject Sad_Object, Brave_Object, Normal_Object, Fear_Object, Happy_Object;
+
+    [Header("Imagens UI")]
     [SerializeField] Image normal, sad, brave, fear, happy;
-     
-    [Header("Sons de Transformação")]
+
+    [Header("Som de Transformação")]
     [SerializeField] AudioClip transformationSound;
 
     AudioSource audioSource;
-
-    PlayerInputActions playerActionsInput;
-
-    Emotions emotions;
+    private bool fearTriggered = false;
 
     private void Awake()
     {
-        playerActionsInput = new PlayerInputActions();
         instance = this;
-    }
-
-    void Start()
-    {
         audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
-    }
-    void OnEnable()
-    {
-        playerActionsInput.Enable();
-
-        playerActionsInput.Player.ChangeNormal.performed += ctx => Swap(Emotions.Normal);
-        playerActionsInput.Player.ChangeSad.performed += ctx => Swap(Emotions.Sad);
-        playerActionsInput.Player.ChangeBrave.performed += ctx => Swap(Emotions.Brave);
-        playerActionsInput.Player.ChangeFear.performed += ctx => Swap(Emotions.Fear);
-        playerActionsInput.Player.ChangeHappy.performed += ctx => Swap(Emotions.Happy);
+        if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     public void Swap(Emotions newEmotion)
     {
-        isSad = isBrave = isNormal = isFear = isHappy = false;
-
-        emotions = newEmotion;
+        ResetEmotions();
 
         switch (newEmotion)
         {
-            case Emotions.Normal:
-                isNormal = true;
-                PlaySound(transformationSound);
-                break;
-            case Emotions.Sad:
-                isSad = true;
-                PlaySound(transformationSound);
-                break;
-            case Emotions.Brave:
-                isBrave = true;
-                PlaySound(transformationSound);
-                break;
-            case Emotions.Fear:
-                isFear = true;
-                PlaySound(transformationSound);
-                break;
-            case Emotions.Happy:
-                isHappy = true;
-                PlaySound(transformationSound);
-                break;
+            case Emotions.Normal: isNormal = true; break;
+            case Emotions.Sad: isSad = true; break;
+            case Emotions.Brave: isBrave = true; break;
+            case Emotions.Fear: isFear = true; break;
+            case Emotions.Happy: isHappy = true; break;
         }
-        Update_Objects();
+
+        // Marca emoção como coletada
+        PlayerStatus.instance.CollectEmotion(newEmotion);
+
+        PlaySound(transformationSound);
+        UpdateObjects();
+
+        if (newEmotion != Emotions.Normal)
+            StartCoroutine(SwapBack(transformationTime));
     }
 
+    void ResetEmotions()
+    {
+        isNormal = isSad = isBrave = isFear = isHappy = false;
+    }
 
-    void Update_Objects()
+    void UpdateObjects()
     {
         Sad_Object.SetActive(isSad);
         Brave_Object.SetActive(isBrave);
         Normal_Object.SetActive(isNormal);
-        Medo_Object.SetActive(isFear);
+        Fear_Object.SetActive(isFear);
         Happy_Object.SetActive(isHappy);
+
         sad.gameObject.SetActive(isSad);
         brave.gameObject.SetActive(isBrave);
         normal.gameObject.SetActive(isNormal);
@@ -102,8 +79,55 @@ public class Troca_Personagens : MonoBehaviour
     void PlaySound(AudioClip clip)
     {
         if (clip != null)
-        {
             audioSource.PlayOneShot(clip);
+    }
+
+    System.Collections.IEnumerator SwapBack(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Swap(Emotions.Normal);
+    }
+
+    // ---------------- Gatilhos específicos ---------------- //
+
+    public void ActivateHappy()
+    {
+        if (PlayerStatus.instance.playerStatus.emotion >= 75f || EnemyKilled())
+            Swap(Emotions.Happy);
+    }
+
+    public void ActivateSad()
+    {
+        Swap(Emotions.Sad);
+    }
+
+    public void ActivateBrave()
+    {
+        Swap(Emotions.Brave);
+    }
+
+    public void ActivateFear()
+    {
+        if (!fearTriggered && EnemyDetected())
+        {
+            fearTriggered = true;
+            Swap(Emotions.Fear);
         }
     }
+
+    // ---------------- Placeholders para lógica ---------------- //
+
+    bool EnemyKilled()
+    {
+        return FindObjectsByType<Enemy>(FindObjectsSortMode.None).Length == 0;
+    }
+
+    bool EnemyDetected()
+    {
+        Enemy enemy = FindFirstObjectByType<Enemy>();
+        if (enemy == null) return false;
+        float distance = Vector2.Distance(transform.position, enemy.transform.position);
+        return distance < 5f; // ajuste a distância de detecção
+    }
+
 }

@@ -9,17 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 821bdfdac1f62464ab653834d2881b1e, type: 3}
-  m_Name: Boss
+  m_Script: {fileID: 11500000, guid: 62f37db4ae176e84888a2bb026844db7, type: 3}
+  m_Name: Attack3
   m_EditorClassIdentifier: 
-  life: 600
-  maxLife: 600
-  lifeRegen: 0
-  energy: 0
-  maxEnergy: 0
-  energyRegen: 0
-  moveSpeed: 3
-  thougness: 0
-  damage: 0
-  cooldown: 15
-  regenCooldown: 0
+  laserPrefab: {fileID: 0}
+  duration: 3
