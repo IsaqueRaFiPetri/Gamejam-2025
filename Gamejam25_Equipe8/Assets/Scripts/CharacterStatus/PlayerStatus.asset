@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821bdfdac1f62464ab653834d2881b1e, type: 3}
   m_Name: PlayerStatus
   m_EditorClassIdentifier: 
-  life: 50
+  life: 0
   maxLife: 50
   lifeRegen: 4
-  energy: 52
-  maxEnergy: 52
+  energy: 0
+  maxEnergy: 100
   energyRegen: 6.5
-  emotion: 70.74333
+  emotion: 69.490654
   maxEmotion: 100
   emotionRegen: 5
   emotionTime: 7
   allEmotionsCollected: 0
   moveSpeed: 5
-  toughness: 0
+  toughness: 1
   damage: 2
   cooldown: 1.5
-  regenCooldown: 4
+  regenCooldown: 1

@@ -25,7 +25,6 @@ public class Tiro_BANG : MonoBehaviour
 
         Vector2 lookDir = mouseWorldPosition - firePosition.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        print(angle);
         firePosition.rotation = Quaternion.Euler(0, 0, angle);
         Vector2 direction = lookDir.normalized;
 

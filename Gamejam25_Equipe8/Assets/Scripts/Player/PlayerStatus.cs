@@ -53,8 +53,12 @@ public class PlayerStatus : MonoBehaviour
 
     public void TakeDamageplayer(float damage)
     {
-        playerStatus.life -= damage;
-        // Brave é ativado sempre que o jogador é atingido
+        if (Troca_Personagens.instance.isSad)
+            playerStatus.life -= damage / (playerStatus.toughness * 2);
+
+        else
+            playerStatus.life -= (damage / playerStatus.toughness);
+
         Troca_Personagens.instance.ActivateBrave();
     }
 
