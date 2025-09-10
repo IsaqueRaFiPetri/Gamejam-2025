@@ -5,9 +5,12 @@ using System.Collections;
 public class Attack1SO : BossAttack
 {
     public float lungeSpeed = 6f;
-    public float stopDistance = 2f;      // distância mínima do player
-    public float telegraphTime = 0.5f;   // tempo de aviso
-    public float shakeAmount = 0.15f;    // intensidade da tremida
+    public float telegraphTime = 0.5f;
+    public float shakeAmount = 0.15f;
+
+    [Header("Distâncias máximas")]
+    public float maxDistanceHead = 5f;
+    public float maxDistanceHands = 3f;
 
     public override IEnumerator Execute(Transform head, Transform leftHand, Transform rightHand, Transform player)
     {
@@ -29,24 +32,33 @@ public class Attack1SO : BossAttack
             }
             part.position = originalPos;
 
-            // --- INVESTIDA ---
-            Vector3 target = player.position;
-            Vector3 dir = (target - part.position).normalized;
+            // --- GUARDA A POSIÇÃO DO PLAYER (fixa) ---
+            Vector3 playerLastPos = player.position;
 
-            while (Vector3.Distance(part.position, target) > stopDistance)
+            // Direção e distância
+            Vector3 dir = (playerLastPos - originalPos).normalized;
+            float maxDist = (part == head) ? maxDistanceHead : maxDistanceHands;
+
+            // Alvo final
+            float distanceToPlayer = Vector3.Distance(originalPos, playerLastPos);
+            Vector3 target = originalPos + dir * Mathf.Min(distanceToPlayer, maxDist);
+
+            // --- AVANÇO ---
+            while (Vector3.Distance(part.position, target) > 0.05f)
             {
-                part.position += dir * lungeSpeed * Time.deltaTime;
+                part.position = Vector3.MoveTowards(part.position, target, lungeSpeed * Time.deltaTime);
                 yield return null;
             }
 
-            // volta para a posição inicial
-            timer = 0f;
-            while (timer < 1f)
+            // --- VOLTA obrigatória ---
+            while (Vector3.Distance(part.position, originalPos) > 0.05f)
             {
-                timer += Time.deltaTime * (lungeSpeed / 2);
-                part.position = Vector3.Lerp(part.position, originalPos, timer);
+                part.position = Vector3.MoveTowards(part.position, originalPos, (lungeSpeed / 2) * Time.deltaTime);
                 yield return null;
             }
+
+            // Garante posição exata ao fim
+            part.position = originalPos;
         }
     }
 }

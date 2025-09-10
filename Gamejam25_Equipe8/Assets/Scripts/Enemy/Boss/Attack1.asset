@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7a9d2efafa30948b6b81f45e8b8640, type: 3}
   m_Name: Attack1
   m_EditorClassIdentifier: 
-  lungeSpeed: 3
+  lungeSpeed: 15
+  telegraphTime: 0.5
+  shakeAmount: 0.15
+  maxDistanceHead: 30
+  maxDistanceHands: 50

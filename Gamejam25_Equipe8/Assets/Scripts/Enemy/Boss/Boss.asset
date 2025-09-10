@@ -18,8 +18,13 @@ MonoBehaviour:
   energy: 0
   maxEnergy: 0
   energyRegen: 0
+  emotion: 0
+  maxEmotion: 0
+  emotionRegen: 0
+  emotionTime: 0
+  allEmotionsCollected: 0
   moveSpeed: 3
-  thougness: 0
+  toughness: 0
   damage: 0
-  cooldown: 15
+  cooldown: 8
   regenCooldown: 0
