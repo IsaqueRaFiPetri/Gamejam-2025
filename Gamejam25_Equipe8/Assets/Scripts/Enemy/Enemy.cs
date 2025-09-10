@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     private Vector2 moveDirection;
     private float lastAttackTime = 0f;
 
+    public AudioClip soco;
+    AudioSource audioSource;
+
     [SerializeField] Image lifeBar;
 
     private void Awake()
@@ -30,6 +33,13 @@ public class Enemy : MonoBehaviour
             if (playerObj != null)
                 playerTransform = playerObj.transform;
         }
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
+        audioSource.volume = 99f;
     }
 
     private void Update()
@@ -62,6 +72,10 @@ public class Enemy : MonoBehaviour
             {
                 PlayerStatus.instance.TakeDamageplayer(enemyStatus.damage);
                 lastAttackTime = Time.time;
+                if (soco != null)
+                {
+                    audioSource.PlayOneShot(soco);
+                }
             }
         }
 

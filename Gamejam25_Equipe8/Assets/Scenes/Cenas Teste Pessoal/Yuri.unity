@@ -852,6 +852,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1070409182275006951, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
+      propertyPath: soco
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e24d87d69731c84c9905f789ae023a9, type: 3}
+    - target: {fileID: 1070409182275006951, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
       propertyPath: lifeBar
       value: 
       objectReference: {fileID: 1606633348}
