@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f37db4ae176e84888a2bb026844db7, type: 3}
   m_Name: Attack3
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 0}
+  laserPrefab: {fileID: 2330208465893882849, guid: 8bdbaef4b2e94654ca0674ea18432645, type: 3}
   duration: 3
