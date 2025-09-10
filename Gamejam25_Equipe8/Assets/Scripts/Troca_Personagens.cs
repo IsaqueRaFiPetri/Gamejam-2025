@@ -64,9 +64,6 @@ public class Troca_Personagens : MonoBehaviour
 
         PlaySound(transformationSound);
         UpdateObjects();
-
-        
-            
     }
 
     void ResetEmotions()
@@ -87,7 +84,12 @@ public class Troca_Personagens : MonoBehaviour
         normal.gameObject.SetActive(isNormal);
         fear.gameObject.SetActive(isFear);
         happy.gameObject.SetActive(isHappy);
+
+        // Atualiza referência no movimento
+        PlayerMovTopdown playerMov = GetComponent<PlayerMovTopdown>();
+        if (playerMov != null) playerMov.UpdateAnimator();
     }
+
 
     void PlaySound(AudioClip clip)
     {
@@ -118,7 +120,6 @@ public class Troca_Personagens : MonoBehaviour
     {
         Swap(Emotions.Brave);
     }
-
     public void ActivateFear()
     {
         if (!fearTriggered && EnemyDetected())
@@ -127,14 +128,10 @@ public class Troca_Personagens : MonoBehaviour
             Swap(Emotions.Fear);
         }
     }
-
-    // ---------------- Placeholders para lógica ---------------- //
-
     bool EnemyKilled()
     {
         return FindObjectsByType<Enemy>(FindObjectsSortMode.None).Length == 0;
     }
-
     bool EnemyDetected()
     {
         Enemy enemy = FindFirstObjectByType<Enemy>();
@@ -142,5 +139,4 @@ public class Troca_Personagens : MonoBehaviour
         float distance = Vector2.Distance(transform.position, enemy.transform.position);
         return distance < 5f; // ajuste a distância de detecção
     }
-
 }
