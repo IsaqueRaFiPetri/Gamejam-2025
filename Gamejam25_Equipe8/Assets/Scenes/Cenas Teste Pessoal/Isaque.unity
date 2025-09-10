@@ -835,9 +835,17 @@ PrefabInstance:
       propertyPath: normal
       value: 
       objectReference: {fileID: 651058315}
+    - target: {fileID: 3078500446279181343, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3501849508753563578, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303752272063290337, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4961614892896268201, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
       propertyPath: m_IsActive
