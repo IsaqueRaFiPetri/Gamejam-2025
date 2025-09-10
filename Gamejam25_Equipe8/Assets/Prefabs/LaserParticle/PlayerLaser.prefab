@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 164acb204e16fa741a9191038096ad0b, type: 2}
+  Bang: {fileID: 8300000, guid: cce5a8c9dfa931344b4cfb3e2af6a1a7, type: 3}
+  Tiro: {fileID: 8300000, guid: 93ec707060ab40e4e9032e6a5fed86a9, type: 3}
 --- !u!61 &3912362554766959188
 BoxCollider2D:
   m_ObjectHideFlags: 0

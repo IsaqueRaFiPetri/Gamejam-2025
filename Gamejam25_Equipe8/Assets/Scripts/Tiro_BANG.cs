@@ -10,16 +10,24 @@ public class Tiro_BANG : MonoBehaviour
     float nextFireTime = 0f;
     [SerializeField] float cost = -1f;
     [SerializeField] CharacterStatus playerStats;
-    PlayerStatus PlayerStatus;
+    public AudioClip Tiro;
+    AudioSource audioSource;
 
     private void Start()
     {
         if (mainCamera == null)
             mainCamera = Camera.main;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
+        audioSource.volume = 999999999999999999f;
     }
 
     void Update()
-    {
+    {        
         Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPosition.z = 0f;
 
@@ -29,14 +37,13 @@ public class Tiro_BANG : MonoBehaviour
         Vector2 direction = lookDir.normalized;
 
         if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
-        {
-
+        {           
             if (Troca_Personagens.instance.isFear)
             {
                 direction *= -1;
             }
 
-            Shoot(direction);
+            Shoot(direction);            
             if (Troca_Personagens.instance.isSad)
             {
                 nextFireTime = Time.time + fireRate + 0.5f;
@@ -90,11 +97,14 @@ public class Tiro_BANG : MonoBehaviour
             PlayerStatus.instance.ReduceEnergy(cost);
             if (rb != null)
             {
-                rb.linearVelocity = direction * projectileSpeed;
-
+                rb.linearVelocity = direction * projectileSpeed;               
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
+            if (Tiro != null)
+            {
+                audioSource.PlayOneShot(Tiro);
+            }                
             Destroy(projectile, 1.5f);
         }
     }    

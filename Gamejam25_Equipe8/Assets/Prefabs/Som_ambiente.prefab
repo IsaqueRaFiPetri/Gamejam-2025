@@ -47,6 +47,8 @@ MonoBehaviour:
   nonoCircle: {fileID: 8300000, guid: 3ce85293a21af9445a39df48544ccc2a, type: 3}
   music_rain: {fileID: 8300000, guid: 832bb1e40cd1042498bb029e0310e7a3, type: 3}
   cityScott: {fileID: 8300000, guid: 3d977d00b1ae2274cac0b777fd00a658, type: 3}
-  sonRain: {fileID: 8300000, guid: 6d641ba0e81569e44bb8d5f6f39face9, type: 3}
+  vent: {fileID: 8300000, guid: 6d641ba0e81569e44bb8d5f6f39face9, type: 3}
   pilar: {fileID: 8300000, guid: 81a35db69790c79409dc0ab190e21513, type: 3}
   sunset: {fileID: 8300000, guid: 6eb954b41d81a87479eb0397a4cf4e96, type: 3}
+  chuva_sonoro: {fileID: 8300000, guid: 774ea785a95b2e14282df4c56cc60f1a, type: 3}
+  rain_2: {fileID: 8300000, guid: 373ea7e83bfde014c8a288f4ecfae702, type: 3}

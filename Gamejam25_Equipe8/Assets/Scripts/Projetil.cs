@@ -3,11 +3,26 @@ using UnityEngine;
 public class Projetil : MonoBehaviour
 {
     [SerializeField] CharacterStatus playerStats;
+    public AudioClip Bang;
+    AudioSource audioSource;    
+    bool acertouAlvo = false;    
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
+        audioSource.volume = 0.3f;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
+            if (acertouAlvo) return;
+
             Enemy enemy = other.GetComponent<Enemy>();
 
             if (enemy != null)
@@ -28,6 +43,7 @@ public class Projetil : MonoBehaviour
                 {
                     enemy.TakeDamageenemy(playerStats.damage);
                 }
+                acertouAlvo = true;
             }
         }
         else if (other.CompareTag("Boss"))
@@ -50,6 +66,15 @@ public class Projetil : MonoBehaviour
             {
                 boss.TakeDamage(playerStats.damage);
             }
+            acertouAlvo = true;
+        }
+        if (acertouAlvo)
+        {
+            if (Bang != null)
+            {
+                audioSource.PlayOneShot(Bang);
+            }            
+            Destroy(gameObject, Bang != null ? Bang.length : 0f);
         }
     }
 }
