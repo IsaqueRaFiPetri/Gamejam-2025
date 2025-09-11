@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     public AudioClip[] sonsDePassos;
     private AudioSource audioPunch;
     private AudioSource audioPassos;
+    public AudioClip explosion;
+    private AudioSource audioExplosion;
 
     [Header("Drop de Item")]
     [SerializeField] private GameObject[] dropItems; // Array de itens que podem cair
@@ -61,6 +63,13 @@ public class Enemy : MonoBehaviour
         audioPassos.playOnAwake = false;
         audioPassos.loop = false;
         audioPassos.volume = 0.15f;
+
+        GameObject explosionAudioObj = new GameObject("AudioExplosion");
+        explosionAudioObj.transform.parent = transform;
+        audioExplosion = explosionAudioObj.AddComponent<AudioSource>();
+        audioExplosion.playOnAwake = false;
+        audioExplosion.loop = false;
+        audioExplosion.volume = 999f;
     }
 
     private void Update()
@@ -129,12 +138,23 @@ public class Enemy : MonoBehaviour
         if (currentLife <= 0)
         {
             DropItem();
-            Destroy(gameObject);
+            StartCoroutine(PlayExplosionAndDestroy());
         }
 
         if (lifeBar != null)
             lifeBar.fillAmount = currentLife / enemyStatus.maxLife;
     }
+    private IEnumerator PlayExplosionAndDestroy()
+    {
+        if (explosion != null && audioExplosion != null)
+        {
+            audioExplosion.PlayOneShot(explosion);
+            yield return new WaitForSeconds(explosion.length);
+        }
+
+        Destroy(gameObject);
+    }
+
 
     private void DropItem()
     {
