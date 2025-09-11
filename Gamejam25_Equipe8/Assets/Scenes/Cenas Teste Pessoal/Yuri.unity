@@ -542,7 +542,7 @@ PrefabInstance:
     - target: {fileID: 4759682494217163937, guid: 003e80cb3c534cc409fdd910de048e39, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 754416512}
     - target: {fileID: 6447706318746061652, guid: 003e80cb3c534cc409fdd910de048e39, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1017,6 +1017,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Som_ambiente
       objectReference: {fileID: 0}
+    - target: {fileID: 5277678534656750965, guid: dd65a75a1b9677f4d8c9a275470f775d, type: 3}
+      propertyPath: fundo_1
+      value: 
+      objectReference: {fileID: 8300000, guid: 8718b861e4cc347bba4d902dc1018d74, type: 3}
+    - target: {fileID: 5277678534656750965, guid: dd65a75a1b9677f4d8c9a275470f775d, type: 3}
+      propertyPath: fundo_2
+      value: 
+      objectReference: {fileID: 8300000, guid: 18ee99f25c8b748018cab7520c4cc22e, type: 3}
     - target: {fileID: 6435674094552012985, guid: dd65a75a1b9677f4d8c9a275470f775d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.870605

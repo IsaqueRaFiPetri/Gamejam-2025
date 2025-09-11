@@ -12,6 +12,8 @@ public class Som_ambiente : MonoBehaviour
     public AudioClip sunset;
     public AudioClip chuva_sonoro;
     public AudioClip rain_2;
+    public AudioClip fundo_1;
+    public AudioClip fundo_2;
 
     private AudioSource audioNonoCircle;
     private AudioSource audioRain;
@@ -21,6 +23,8 @@ public class Som_ambiente : MonoBehaviour
     private AudioSource audioSunset;
     private AudioSource audioChuva_Sonoro;
     private AudioSource audioRain_2;
+    private AudioSource audiofundo_1;
+    private AudioSource audiofundo_2;
     void Start()
     {
         audioNonoCircle = gameObject.AddComponent<AudioSource>();
@@ -31,7 +35,8 @@ public class Som_ambiente : MonoBehaviour
         audioSunset = gameObject.AddComponent<AudioSource>();
         audioChuva_Sonoro = gameObject.AddComponent<AudioSource>();
         audioRain_2 = gameObject.AddComponent<AudioSource>();
-
+        audiofundo_1 = gameObject.AddComponent<AudioSource>();
+        audiofundo_2 = gameObject.AddComponent<AudioSource>();
         audioNonoCircle.clip = nonoCircle;
         audioNonoCircle.loop = true;
         audioNonoCircle.volume = 0.08f;
@@ -44,7 +49,7 @@ public class Som_ambiente : MonoBehaviour
 
         audioCityScott.clip = cityScott;
         audioCityScott.loop = true;
-        audioCityScott.volume = 0.48f;
+        audioCityScott.volume = 0.4f;
         audioCityScott.Play();
 
         audioVent.clip = vent;
@@ -71,6 +76,16 @@ public class Som_ambiente : MonoBehaviour
         audioRain_2.loop = true;
         audioRain_2.volume = 0.05f;
         audioRain_2.Play();
+
+        audiofundo_1.clip = fundo_1;
+        audiofundo_1.loop = true;
+        audiofundo_1.volume = 0.04f;
+        audiofundo_1.Play();
+
+        audiofundo_2.clip = fundo_2;
+        audiofundo_2.loop = true;
+        audiofundo_2.volume = 0.04f;
+        audiofundo_2.Play();
 
         /*int quantidadeSons = sonsDFundo.Length;
         audioSources = new AudioSource[quantidadeSons];

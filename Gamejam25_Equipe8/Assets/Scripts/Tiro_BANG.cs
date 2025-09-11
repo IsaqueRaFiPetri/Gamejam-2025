@@ -23,7 +23,7 @@ public class Tiro_BANG : MonoBehaviour
 
         audioSource.playOnAwake = false;
         audioSource.loop = false;
-        audioSource.volume = 999999999999999999f;
+        audioSource.volume = 0.65f;
     }
 
     void Update()
