@@ -18,3 +18,4 @@ MonoBehaviour:
   telegraphTime: 0.6
   shakeAmount: 0.15
   moveSpeed: 5
+  lazer_beam: {fileID: 8300000, guid: 62d6f5533479a1547bd2907b42e1add3, type: 3}

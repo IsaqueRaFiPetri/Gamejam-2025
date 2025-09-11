@@ -18,3 +18,4 @@ MonoBehaviour:
   shakeAmount: 0.15
   maxDistanceHead: 20
   maxDistanceHands: 40
+  punch: {fileID: 8300000, guid: 4c6369f836755d746b3fab2e46a80978, type: 3}

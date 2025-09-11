@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 [CreateAssetMenu(menuName = "Boss/Attacks/Attack3")]
 public class Attack3SO : BossAttack
@@ -9,11 +10,12 @@ public class Attack3SO : BossAttack
     public float telegraphTime = 0.6f;
     public float shakeAmount = 0.15f;
     public float moveSpeed = 2f;
+    public AudioClip lazer_beam;
 
     public override IEnumerator Execute(Transform head, Transform leftHand, Transform rightHand, Transform player)
     {
         Transform[] parts = { head, leftHand, rightHand };
-
+     
         // --- TELEGRAPH ---
         foreach (Transform part in parts)
         {
@@ -30,14 +32,24 @@ public class Attack3SO : BossAttack
 
         // --- DISPARO LASER ---
         GameObject[] activeLasers = new GameObject[parts.Length];
-        int[] directions = new int[parts.Length];
-
+        int[] directions = new int[parts.Length]; 
+    
         for (int i = 0; i < parts.Length; i++)
         {
             Transform part = parts[i];
 
             // direção aleatória (+1 ou -1)
             directions[i] = Random.value > 0.5f ? 1 : -1;
+            AudioSource audio = part.GetComponent<AudioSource>();
+            if (audio == null)
+            {
+                audio = part.gameObject.AddComponent<AudioSource>();
+                audio.playOnAwake = false;
+                audio.loop = false;
+                audio.volume = 0.6f;
+            }
+            audio.PlayOneShot(lazer_beam);
+
 
             // spawn laser
             GameObject laser = Object.Instantiate(laserPrefab, part.position, Quaternion.identity);

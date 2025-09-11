@@ -17,3 +17,4 @@ MonoBehaviour:
   projectileSpeed: 8
   telegraphTime: 0.4
   shakeAmount: 0.15
+  lazer_ball: {fileID: 8300000, guid: 5ce787e833138024fb9fc7e6f1e6fef4, type: 3}

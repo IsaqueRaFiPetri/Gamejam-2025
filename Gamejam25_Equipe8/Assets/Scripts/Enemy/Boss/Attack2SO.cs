@@ -8,12 +8,13 @@ public class Attack2SO : BossAttack
     public float projectileSpeed = 8f;
     public float telegraphTime = 0.4f;
     public float shakeAmount = 0.15f;
+    public AudioClip lazer_ball;   
 
     public override IEnumerator Execute(Transform head, Transform leftHand, Transform rightHand, Transform player)
     {
         Transform[] parts = { head, leftHand, rightHand };
-        int count = Random.Range(1, parts.Length + 1);
-
+        int count = Random.Range(1, parts.Length + 1);    
+           
         for (int i = 0; i < count; i++)
         {
             Transform part = parts[Random.Range(0, parts.Length)];
@@ -28,6 +29,16 @@ public class Attack2SO : BossAttack
                 yield return null;
             }
             part.position = originalPos;
+            
+            AudioSource audio = part.GetComponent<AudioSource>();
+            if (audio == null)
+            {
+                audio = part.gameObject.AddComponent<AudioSource>();
+                audio.playOnAwake = false;
+                audio.loop = false;
+                audio.volume = 0.6f;
+            }
+            audio.PlayOneShot(lazer_ball);
 
             // --- PROJETIL (direção fixa para última posição do player) ---
             Vector3 playerLastPos = player.position;
