@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public enum Emotions
 {
@@ -24,7 +25,9 @@ public class Troca_Personagens : MonoBehaviour
     [SerializeField] AudioClip transformationSound;
 
     AudioSource audioSource;
+
     private bool fearTriggered = false;
+    private bool isTemporaryEmotion = false;
 
     private void Awake()
     {
@@ -33,32 +36,30 @@ public class Troca_Personagens : MonoBehaviour
         if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-    public void Swap(Emotions newEmotion)
+    public void Swap(Emotions newEmotion, bool temporary = false)
     {
+        if (isTemporaryEmotion && !temporary)
+            return; // Não sobrescreve uma emoção temporária
+
         ResetEmotions();
 
         switch (newEmotion)
         {
-            case Emotions.Normal: 
-                isNormal = true; 
-                break;
-            case Emotions.Sad: 
-                isSad = true; 
-                break;
-            case Emotions.Brave: 
+            case Emotions.Normal: isNormal = true; break;
+            case Emotions.Sad: isSad = true; break;
+            case Emotions.Brave:
                 isBrave = true;
-                StartCoroutine(SwapBack(transformationTime));
+                if (temporary) StartCoroutine(SwapBack(transformationTime));
                 break;
-            case Emotions.Fear: 
+            case Emotions.Fear:
                 isFear = true;
-                StartCoroutine(SwapBack(transformationTime));
+                if (temporary) StartCoroutine(SwapBack(transformationTime));
                 break;
-            case Emotions.Happy: 
-                isHappy = true;
-                break;
+            case Emotions.Happy: isHappy = true; break;
         }
 
-        // Marca emoção como coletada
+        isTemporaryEmotion = temporary;
+
         PlayerStatus.instance.CollectEmotion(newEmotion);
 
         PlaySound(transformationSound);
@@ -89,16 +90,16 @@ public class Troca_Personagens : MonoBehaviour
         if (playerMov != null) playerMov.UpdateAnimator();
     }
 
-
     void PlaySound(AudioClip clip)
     {
         if (clip != null)
             audioSource.PlayOneShot(clip);
     }
 
-    System.Collections.IEnumerator SwapBack(float waitTime)
+    IEnumerator SwapBack(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
+        isTemporaryEmotion = false;
         Swap(Emotions.Normal);
     }
 
@@ -117,20 +118,23 @@ public class Troca_Personagens : MonoBehaviour
 
     public void ActivateBrave()
     {
-        Swap(Emotions.Brave);
+        Swap(Emotions.Brave, true);
     }
+
     public void ActivateFear()
     {
         if (!fearTriggered && EnemyDetected())
         {
             fearTriggered = true;
-            Swap(Emotions.Fear);
+            Swap(Emotions.Fear, true);
         }
     }
+
     bool EnemyKilled()
     {
         return FindObjectsByType<Enemy>(FindObjectsSortMode.None).Length == 0;
     }
+
     bool EnemyDetected()
     {
         Enemy enemy = FindFirstObjectByType<Enemy>();

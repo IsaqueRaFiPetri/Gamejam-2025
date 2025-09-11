@@ -7,10 +7,8 @@ public class PlayerStatus : MonoBehaviour
 
     [SerializeField] public CharacterStatus playerStatus;
     [SerializeField] Image lifeBar, energyBar, emotionBar;
-
     [SerializeField] GameObject defeatPainel;
 
-    // Flags de emoções coletadas
     private bool collectedBrave, collectedFear, collectedHappy, collectedSad;
 
     private void Start()
@@ -42,7 +40,6 @@ public class PlayerStatus : MonoBehaviour
         playerStatus.emotion = Mathf.Min(playerStatus.emotion + playerStatus.emotionRegen, playerStatus.maxEmotion);
     }
 
-
     void ReduceEmotionOverTime()
     {
         playerStatus.emotion -= 1f * Time.deltaTime;
@@ -51,21 +48,17 @@ public class PlayerStatus : MonoBehaviour
 
     public void TakeDamageplayer(float damage)
     {
-        Troca_Personagens.instance.Swap(Emotions.Brave);
+        Troca_Personagens.instance.ActivateBrave();
 
         if (Troca_Personagens.instance.isSad)
             playerStatus.life -= damage / (playerStatus.toughness * 2);
-
         else
-            playerStatus.life -= (damage / playerStatus.toughness);
+            playerStatus.life -= damage / playerStatus.toughness;
 
-        if (playerStatus.life == 0)
+        if (playerStatus.life <= 0)
         {
             Die();
         }
-            
-
-        Troca_Personagens.instance.ActivateBrave();
     }
 
     public void ReduceEnergy(float amount)
@@ -100,7 +93,10 @@ public class PlayerStatus : MonoBehaviour
 
     void CheckEmotionCollection()
     {
-        // Sad automático quando a barra estiver baixa
+        // Evita sobrescrever emoções temporárias
+        if (Troca_Personagens.instance.isBrave || Troca_Personagens.instance.isFear)
+            return;
+
         if (playerStatus.emotion <= 100f)
         {
             Troca_Personagens.instance.ActivateSad();
@@ -109,10 +105,14 @@ public class PlayerStatus : MonoBehaviour
                 TakeDamageplayer(playerStatus.damage);
             }
         }
-        else if(playerStatus.emotion >= 400)
+        else if (playerStatus.emotion >= 400)
+        {
             Troca_Personagens.instance.Swap(Emotions.Happy);
+        }
         else
+        {
             Troca_Personagens.instance.Swap(Emotions.Normal);
+        }
     }
 
     public void Die()
@@ -125,7 +125,7 @@ public class PlayerStatus : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Troca_Personagens.instance.Swap(Emotions.Fear);
+            Troca_Personagens.instance.Swap(Emotions.Fear, true);
         }
     }
 }

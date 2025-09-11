@@ -27,14 +27,13 @@ public class PlayerMovTopdown : MonoBehaviour
         audioSource.playOnAwake = false;
         audioSource.loop = false;
 
-        UpdateAnimator(); // pega o animator do objeto ativo
+        UpdateAnimator();
     }
 
     void Update()
     {
         if (currentAnimator == null) UpdateAnimator();
 
-        // Atualiza a animação
         if (movementInput != Vector2.zero)
         {
             currentAnimator.SetFloat("Horizontal", movementInput.x);
@@ -89,25 +88,26 @@ public class PlayerMovTopdown : MonoBehaviour
 
     private void FixedUpdate()
     {
+        float speed = playerStatus.moveSpeed;
+
         if (Troca_Personagens.instance.isFear)
-            rb.linearVelocity = movementInput * playerStatus.moveSpeed * 5 / 2;
+            rb.linearVelocity = movementInput * speed * 2.5f;
         else if (Troca_Personagens.instance.isBrave)
-            rb.linearVelocity = movementInput * playerStatus.moveSpeed / 2;
+            rb.linearVelocity = movementInput * speed * 0.5f;
         else
-            rb.linearVelocity = movementInput * playerStatus.moveSpeed;
+            rb.linearVelocity = movementInput * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>())
         {
-            Troca_Personagens.instance.Swap(Emotions.Fear);
+            Troca_Personagens.instance.Swap(Emotions.Fear, true);
         }
     }
 
     public void UpdateAnimator()
     {
-        // Procura o objeto filho ativo e pega o Animator dele
         foreach (Transform child in transform)
         {
             if (child.gameObject.activeSelf)
