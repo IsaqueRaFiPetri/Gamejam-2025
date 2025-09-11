@@ -439,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   destroyOnHit: 0
+  lazer_balldestrution: {fileID: 0}
 --- !u!61 &8221015630460808332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -663,6 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   destroyOnHit: 0
+  lazer_balldestrution: {fileID: 0}
 --- !u!61 &5419727699573242960
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -756,7 +758,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &978328026135429938
 Transform:
   m_ObjectHideFlags: 0
@@ -796,6 +798,8 @@ MonoBehaviour:
   attack3: {fileID: 11400000, guid: da586996df625764187dfec902f43be3, type: 2}
   bossLifeBar: {fileID: 0}
   bossNameAndPerCent: {fileID: 0}
+  playerObj: {fileID: 0}
+  uWinPainel: {fileID: 0}
 --- !u!1 &5838020060164248305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   destroyOnHit: 0
+  lazer_balldestrution: {fileID: 0}
 --- !u!61 &4003516999354451354
 BoxCollider2D:
   m_ObjectHideFlags: 0
