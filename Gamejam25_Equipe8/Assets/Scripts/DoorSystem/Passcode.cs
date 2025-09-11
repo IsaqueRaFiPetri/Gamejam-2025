@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Passcode : MonoBehaviour
@@ -11,8 +11,8 @@ public class Passcode : MonoBehaviour
     string Nr = null;
     int NrIndex = 0;
     string alpha;
-    public Text UiText = null;
-    public GameObject painelVitoria;
+    public TextMeshProUGUI UiText = null;
+    
 
     [SerializeField] GameObject doorObj, painelObj;
 
@@ -37,10 +37,12 @@ public class Passcode : MonoBehaviour
         UiText.text = Nr;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
-            painelObj.SetActive(true);
+            Debug.Log("Player encostando no painel!");
+
+        painelObj.SetActive(true);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
