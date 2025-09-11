@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4579879663355605907}
   - component: {fileID: 8303574767958951660}
   - component: {fileID: 7918688181035800931}
-  - component: {fileID: 1696884104248743842}
+  - component: {fileID: 3651027962858780337}
   m_Layer: 0
   m_Name: Projetil1
   m_TagString: Untagged
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1098286324429101383, guid: 43e0dc4c9344745489477b8be45fb231, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -176,7 +176,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1696884104248743842
+--- !u!114 &3651027962858780337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,7 +185,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5432773568017726156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa25126a6ab62e4c9713ad86c2843a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2940756c8a804f644af61ee691117a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: 164acb204e16fa741a9191038096ad0b, type: 2}
+  status: {fileID: 11400000, guid: 35c7b28bf1b156e40bfa94e0f9376976, type: 2}
+  Bang: {fileID: 0}

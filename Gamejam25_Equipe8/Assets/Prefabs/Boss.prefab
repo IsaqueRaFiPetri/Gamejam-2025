@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5244389062479097050}
   - component: {fileID: 6416711028698839480}
-  - component: {fileID: 916438539613559683}
+  - component: {fileID: 1539401399739564265}
   m_Layer: 0
   m_Name: L_Hand
   m_TagString: Boss
@@ -88,13 +88,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!64 &916438539613559683
-MeshCollider:
+--- !u!68 &1539401399739564265
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3296966369704909875}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -103,13 +106,35 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.92842245, y: -0.49740982}
+  - {x: -0.92380375, y: -1.0070426}
+  - {x: 0.15303624, y: -1.0176294}
+  - {x: 0.4021156, y: -0.06198968}
+  - {x: -0.2785077, y: -0.00028556585}
+  - {x: -0.9230478, y: -0.51583254}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &4180532758359656335
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5190971017383856587}
   - component: {fileID: 3566771617802574716}
-  - component: {fileID: 3788467721096065529}
+  - component: {fileID: 6769900033937447790}
   m_Layer: 0
   m_Name: R_Hand
   m_TagString: Boss
@@ -198,13 +223,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!64 &3788467721096065529
-MeshCollider:
+--- !u!68 &6769900033937447790
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4180532758359656335}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -213,13 +241,35 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.41125745, y: -0.0076730247}
+  - {x: -0.12869495, y: -1.011728}
+  - {x: 0.90929174, y: -1.0051587}
+  - {x: 0.8904713, y: -0.50935996}
+  - {x: 0.18401292, y: 0.14186054}
+  - {x: -0.38673162, y: -0.015345931}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &5299531055792109664
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7579741933914706353}
   - component: {fileID: 8847491691583832706}
-  - component: {fileID: 8149583297146191789}
+  - component: {fileID: 4847030354971404972}
   m_Layer: 0
   m_Name: Head
   m_TagString: Boss
@@ -460,13 +510,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!64 &8149583297146191789
-MeshCollider:
+--- !u!68 &4847030354971404972
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7040786162744860794}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -475,10 +528,38 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.9933386, y: 1.6744}
+  - {x: -2.2016604, y: 0.09318354}
+  - {x: -1.4931321, y: -0.56822044}
+  - {x: -1.2828219, y: -0.8298816}
+  - {x: -0.18533288, y: -1.1691235}
+  - {x: 1.2106777, y: -1.1670756}
+  - {x: 1.6551809, y: -0.8533108}
+  - {x: 1.9467863, y: -0.8095172}
+  - {x: 2.2707455, y: -0.37982172}
+  - {x: 2.6358979, y: 0.08114973}
+  - {x: 2.6185248, y: 1.6454148}
+  - {x: -1.9873195, y: 1.6735823}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
