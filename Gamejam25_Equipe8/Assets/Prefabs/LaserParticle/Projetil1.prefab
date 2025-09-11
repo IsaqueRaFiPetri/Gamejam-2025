@@ -167,3 +167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   destroyOnHit: 1
+  lazer_balldestrution: {fileID: 8300000, guid: cae7192628eaefb45b81d24fedc677cc, type: 3}

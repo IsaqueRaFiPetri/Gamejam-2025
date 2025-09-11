@@ -18,7 +18,7 @@ public class DamageDealer : MonoBehaviour
 
             audioSource.playOnAwake = false;
             audioSource.loop = false;
-            audioSource.volume = 1f;
+            audioSource.volume = 100f;
             if (destroyOnHit)
                 Destroy(gameObject);
         }

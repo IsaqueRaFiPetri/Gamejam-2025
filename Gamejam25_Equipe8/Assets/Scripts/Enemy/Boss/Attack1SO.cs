@@ -29,7 +29,7 @@ public class Attack1SO : BossAttack
                 audio = part.gameObject.AddComponent<AudioSource>();
                 audio.playOnAwake = false;
                 audio.loop = false;
-                audio.volume = 0.6f;              
+                audio.volume = 100f;              
             }
             audio.PlayOneShot(punch);
             // --- TELEGRAPH ---
