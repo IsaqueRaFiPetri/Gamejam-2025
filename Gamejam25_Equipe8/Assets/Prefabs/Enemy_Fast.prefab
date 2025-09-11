@@ -317,7 +317,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   enemyStatus: {fileID: 11400000, guid: 36d39acf7bc15e941b5c5aa576b13a24, type: 2}
   animator: {fileID: 3842199021579898190}
-  soco: {fileID: 8300000, guid: 9fe22d9e0b9355142b8b3e9d75b82d97, type: 3}
+  soco: {fileID: 8300000, guid: 1e24d87d69731c84c9905f789ae023a9, type: 3}
   sonsDePassos:
   - {fileID: 8300000, guid: 574d70118068c704e9d2654d8e5b386f, type: 3}
   - {fileID: 8300000, guid: 6233c85216cd1854e8d87991c7568256, type: 3}
