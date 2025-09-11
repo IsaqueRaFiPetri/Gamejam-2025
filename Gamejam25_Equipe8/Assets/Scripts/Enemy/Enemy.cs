@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     public Transform playerTransform;
     public CharacterStatus enemyStatus;
     public Animator animator; // Animator do inimigo
+   // public Animator attackanim;
     private Rigidbody2D rb;
 
     private bool canMove = false; // só anda após animação inicial
@@ -38,7 +39,7 @@ public class Enemy : MonoBehaviour
 
         audioSource.playOnAwake = false;
         audioSource.loop = false;
-        audioSource.volume = 99f;
+        audioSource.volume = 99999999f;
     }
 
     private void Update()
@@ -73,7 +74,8 @@ public class Enemy : MonoBehaviour
                 lastAttackTime = Time.time;
                 if (soco != null)
                 {
-                    audioSource.PlayOneShot(soco);
+                    //attackanim?.SetTrigger("Attack");
+                    audioSource.PlayOneShot(soco);                    
                 }
             }
         }

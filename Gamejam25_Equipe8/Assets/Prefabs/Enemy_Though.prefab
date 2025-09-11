@@ -209,7 +209,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   enemyStatus: {fileID: 11400000, guid: bef5ed0184b388047b7e6961d45eeb84, type: 2}
   animator: {fileID: 394169254265991336}
-  soco: {fileID: 0}
+  soco: {fileID: 8300000, guid: cae7192628eaefb45b81d24fedc677cc, type: 3}
   lifeBar: {fileID: 1129530388304084089}
 --- !u!61 &6859290973319426327
 BoxCollider2D:
@@ -283,7 +283,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &394169254265991336
 Animator:
   serializedVersion: 7

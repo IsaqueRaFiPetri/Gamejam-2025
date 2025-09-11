@@ -293,6 +293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3501849508753563578, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5592090742078041841, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
       propertyPath: lifeBar
       value: 
@@ -845,17 +849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1606633348 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8339234229894218402, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
-  m_PrefabInstance: {fileID: 552168283336170588}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1770431791
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,11 +959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1999060568 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 563544115142753902, guid: 50555299de922ca4dbf457e09debb65a, type: 3}
-  m_PrefabInstance: {fileID: 439361422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2008397755 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8012804128861247914, guid: 003e80cb3c534cc409fdd910de048e39, type: 3}
@@ -1079,21 +1067,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1070409182275006951, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
-      propertyPath: soco
-      value: 
-      objectReference: {fileID: 8300000, guid: 1e24d87d69731c84c9905f789ae023a9, type: 3}
-    - target: {fileID: 1070409182275006951, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
-      propertyPath: lifeBar
-      value: 
-      objectReference: {fileID: 1606633348}
-    - target: {fileID: 1070409182275006951, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 439361423}
-    - target: {fileID: 1070409182275006951, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
-      propertyPath: player_Collider
-      value: 
-      objectReference: {fileID: 1999060568}
     - target: {fileID: 6365878769764077032, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.7040906
@@ -1137,10 +1113,6 @@ PrefabInstance:
     - target: {fileID: 7880452732839701972, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7880452732839701972, guid: 5b8f295746f4a2442965582ed743b83e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
