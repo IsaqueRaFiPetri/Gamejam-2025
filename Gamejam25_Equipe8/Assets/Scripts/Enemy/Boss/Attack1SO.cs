@@ -20,9 +20,9 @@ public class Attack1SO : BossAttack
         for (int i = 0; i < count; i++)
         {
             Transform part = parts[Random.Range(0, parts.Length)];
+            Vector3 originalPos = part.position;
 
             // --- TELEGRAPH ---
-            Vector3 originalPos = part.position;
             float timer = 0f;
             while (timer < telegraphTime)
             {
@@ -32,32 +32,28 @@ public class Attack1SO : BossAttack
             }
             part.position = originalPos;
 
-            // --- GUARDA A POSIÇÃO DO PLAYER (fixa) ---
+            // --- PONTO FINAL (reta até última posição do player, limitado pela distância) ---
             Vector3 playerLastPos = player.position;
-
-            // Direção e distância
-            Vector3 dir = (playerLastPos - originalPos).normalized;
+            Vector3 direction = (playerLastPos - originalPos).normalized;
             float maxDist = (part == head) ? maxDistanceHead : maxDistanceHands;
 
-            // Alvo final
-            float distanceToPlayer = Vector3.Distance(originalPos, playerLastPos);
-            Vector3 target = originalPos + dir * Mathf.Min(distanceToPlayer, maxDist);
+            float distanceToTarget = Mathf.Min(Vector3.Distance(originalPos, playerLastPos), maxDist);
+            Vector3 target = originalPos + direction * distanceToTarget;
 
-            // --- AVANÇO ---
-            while (Vector3.Distance(part.position, target) > 0.05f)
+            // --- MOVER PARA FRENTE ---
+            while (Vector3.Distance(part.position, target) > 0.01f)
             {
                 part.position = Vector3.MoveTowards(part.position, target, lungeSpeed * Time.deltaTime);
                 yield return null;
             }
+            part.position = target;
 
-            // --- VOLTA obrigatória ---
-            while (Vector3.Distance(part.position, originalPos) > 0.05f)
+            // --- VOLTAR PARA POSIÇÃO INICIAL ---
+            while (Vector3.Distance(part.position, originalPos) > 0.01f)
             {
                 part.position = Vector3.MoveTowards(part.position, originalPos, (lungeSpeed / 2) * Time.deltaTime);
                 yield return null;
             }
-
-            // Garante posição exata ao fim
             part.position = originalPos;
         }
     }

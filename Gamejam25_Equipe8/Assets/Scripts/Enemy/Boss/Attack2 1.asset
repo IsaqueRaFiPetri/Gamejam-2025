@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95c745692341eb48a21c39164351dcf, type: 3}
   m_Name: Attack2 1
   m_EditorClassIdentifier: 
+  animationTrigger: ActiveAttack2
   projectilePrefab: {fileID: 5432773568017726156, guid: b939c38c8f0b3dd4a87e44f007211701, type: 3}
   projectileSpeed: 8
+  telegraphTime: 0.4
+  shakeAmount: 0.15

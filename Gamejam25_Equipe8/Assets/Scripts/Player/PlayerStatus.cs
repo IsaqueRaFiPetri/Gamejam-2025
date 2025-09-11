@@ -36,13 +36,12 @@ public class PlayerStatus : MonoBehaviour
         emotionBar.fillAmount = playerStatus.emotion / playerStatus.maxEmotion;
     }
 
-    void RegenerateStats()
+    public void RegenerateStats()
     {
-        if (Troca_Personagens.instance.isHappy)
-        {
-            playerStatus.life = Mathf.Min(playerStatus.life + playerStatus.lifeRegen * Time.deltaTime, playerStatus.maxLife);
-            playerStatus.energy = Mathf.Min(playerStatus.energy + playerStatus.energyRegen * Time.deltaTime, playerStatus.maxEnergy);
-        }
+        playerStatus.life = playerStatus.life + playerStatus.lifeRegen;
+        playerStatus.energy = playerStatus.energy + playerStatus.energyRegen;
+        playerStatus.emotion = playerStatus.emotion + playerStatus.emotionRegen;
+        
     }
 
     void ReduceEmotionOverTime()

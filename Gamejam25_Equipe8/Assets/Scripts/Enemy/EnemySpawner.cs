@@ -14,11 +14,6 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         areaCollider = GetComponent<Collider2D>();
-
-        if (areaCollider == null)
-        {
-            Debug.LogError("Nenhum Collider2D encontrado no spawner!");
-        }
     }
 
     private void Start()
