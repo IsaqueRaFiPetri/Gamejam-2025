@@ -1135,6 +1135,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1951130600090418609, guid: 90a8744bcc7db374eae00274052b2b60, type: 3}
+      propertyPath: epic
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a3e9868c623f9c4494c8489c3a8040c, type: 3}
+    - target: {fileID: 1951130600090418609, guid: 90a8744bcc7db374eae00274052b2b60, type: 3}
+      propertyPath: battle2
+      value: 
+      objectReference: {fileID: 8300000, guid: 01ca68242606d7a4f9b8965da5e2882e, type: 3}
     - target: {fileID: 7627322050305853942, guid: 90a8744bcc7db374eae00274052b2b60, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6726049

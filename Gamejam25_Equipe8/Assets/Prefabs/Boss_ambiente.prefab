@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle1: {fileID: 8300000, guid: 94a0d4b96ffab074cbc5b16e6e78b876, type: 3}
-  battle2: {fileID: 0}
+  epic: {fileID: 8300000, guid: 3a3e9868c623f9c4494c8489c3a8040c, type: 3}
   intro: {fileID: 8300000, guid: 18c26bdb2f6b4374ab5e1411e8e42475, type: 3}
   theend: {fileID: 8300000, guid: 26120032e980a614abd84c9471ae30fc, type: 3}
