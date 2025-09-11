@@ -68,7 +68,7 @@ public class Tiro_BANG : MonoBehaviour
     void Shoot(Vector2 direction)
     {
         
-        if (!Troca_Personagens.instance.isBrave && !Troca_Personagens.instance.isHappy && !Troca_Personagens.instance.isFear && !Troca_Personagens.instance.isSad)
+        if (!Troca_Personagens.instance.isBrave)
         {
             cost = 4f;
         }
