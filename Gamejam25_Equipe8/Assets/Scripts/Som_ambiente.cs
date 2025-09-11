@@ -14,6 +14,7 @@ public class Som_ambiente : MonoBehaviour
     public AudioClip rain_2;
     public AudioClip fundo_1;
     public AudioClip fundo_2;
+    public AudioClip delusion;
 
     private AudioSource audioNonoCircle;
     private AudioSource audioRain;
@@ -25,6 +26,7 @@ public class Som_ambiente : MonoBehaviour
     private AudioSource audioRain_2;
     private AudioSource audiofundo_1;
     private AudioSource audiofundo_2;
+    private AudioSource audiodelusion;
     void Start()
     {
         audioNonoCircle = gameObject.AddComponent<AudioSource>();
@@ -37,6 +39,8 @@ public class Som_ambiente : MonoBehaviour
         audioRain_2 = gameObject.AddComponent<AudioSource>();
         audiofundo_1 = gameObject.AddComponent<AudioSource>();
         audiofundo_2 = gameObject.AddComponent<AudioSource>();
+        audiodelusion = gameObject.AddComponent<AudioSource>();
+
         audioNonoCircle.clip = nonoCircle;
         audioNonoCircle.loop = true;
         audioNonoCircle.volume = 0.08f;
@@ -87,6 +91,10 @@ public class Som_ambiente : MonoBehaviour
         audiofundo_2.volume = 0.04f;
         audiofundo_2.Play();
 
+        audiodelusion.clip = delusion;
+        audiodelusion.loop = true;
+        audiodelusion.volume = 0.75f;
+        audiodelusion.Play();
         /*int quantidadeSons = sonsDFundo.Length;
         audioSources = new AudioSource[quantidadeSons];
 

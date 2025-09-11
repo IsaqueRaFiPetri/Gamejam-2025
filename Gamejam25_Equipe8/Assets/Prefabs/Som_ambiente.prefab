@@ -54,3 +54,4 @@ MonoBehaviour:
   rain_2: {fileID: 8300000, guid: 373ea7e83bfde014c8a288f4ecfae702, type: 3}
   fundo_1: {fileID: 8300000, guid: 8718b861e4cc347bba4d902dc1018d74, type: 3}
   fundo_2: {fileID: 8300000, guid: 18ee99f25c8b748018cab7520c4cc22e, type: 3}
+  delusion: {fileID: 8300000, guid: f254023f973c3a94e924e4e2f1e74b6c, type: 3}
