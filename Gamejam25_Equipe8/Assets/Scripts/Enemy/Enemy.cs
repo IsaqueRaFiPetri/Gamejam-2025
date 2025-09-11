@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour
     private AudioSource audioPunch;
     private AudioSource audioPassos;
 
+    [Header("Drop de Item")]
+    [SerializeField] private GameObject[] dropItems; // Array de itens que podem cair
+    [Range(0f, 1f)] public float dropChance = 0.3f;  // Chance de dropar (30% por padrão)
+
     private Rigidbody2D rb;
     private Vector2 moveDirection;
     private bool canMove = false;
@@ -35,10 +39,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        // Vida individual do inimigo
         currentLife = enemyStatus.maxLife;
 
-        // Busca player se não estiver setado no inspector
         if (playerTransform == null)
         {
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -46,7 +48,6 @@ public class Enemy : MonoBehaviour
                 playerTransform = playerObj.transform;
         }
 
-        // Criar áudio de soco
         GameObject punchAudioObj = new GameObject("AudioPunch");
         punchAudioObj.transform.parent = transform;
         audioPunch = punchAudioObj.AddComponent<AudioSource>();
@@ -54,7 +55,6 @@ public class Enemy : MonoBehaviour
         audioPunch.loop = false;
         audioPunch.volume = 0.8f;
 
-        // Criar áudio de passos
         GameObject passosAudioObj = new GameObject("AudioPassos");
         passosAudioObj.transform.parent = transform;
         audioPassos = passosAudioObj.AddComponent<AudioSource>();
@@ -65,7 +65,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        // Calcula direção até o player
         if (playerTransform != null && canMove)
         {
             moveDirection = (playerTransform.position - transform.position).normalized;
@@ -75,7 +74,6 @@ public class Enemy : MonoBehaviour
             moveDirection = Vector2.zero;
         }
 
-        // Atualiza barra de vida
         if (lifeBar != null)
             lifeBar.fillAmount = currentLife / enemyStatus.maxLife;
     }
@@ -84,10 +82,8 @@ public class Enemy : MonoBehaviour
     {
         if (canMove)
         {
-            // Movimentação pelo Rigidbody2D
             rb.MovePosition(rb.position + moveDirection * enemyStatus.moveSpeed * Time.fixedDeltaTime);
 
-            // Controle dos sons de passos
             bool currentlyMoving = moveDirection != Vector2.zero;
 
             if (currentlyMoving && !isMoving)
@@ -125,12 +121,24 @@ public class Enemy : MonoBehaviour
 
         if (currentLife <= 0)
         {
+            DropItem();
             Destroy(gameObject);
         }
 
-        // Atualiza barra de vida do inimigo
         if (lifeBar != null)
             lifeBar.fillAmount = currentLife / enemyStatus.maxLife;
+    }
+
+    private void DropItem()
+    {
+        if (dropItems.Length == 0) return;
+
+        float roll = Random.value; // valor entre 0 e 1
+        if (roll <= dropChance)
+        {
+            int index = Random.Range(0, dropItems.Length);
+            Instantiate(dropItems[index], transform.position, Quaternion.identity);
+        }
     }
 
     public void StartMoving()
@@ -176,3 +184,4 @@ public class Enemy : MonoBehaviour
         }
     }
 }
+

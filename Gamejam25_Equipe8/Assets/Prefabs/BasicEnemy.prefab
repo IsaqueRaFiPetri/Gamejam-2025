@@ -402,9 +402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a729c1c3221e2409434392ab533801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   enemyStatus: {fileID: 11400000, guid: 844a1bf56e29d0a408564559c28785ae, type: 2}
+  playerTransform: {fileID: 0}
   animator: {fileID: 5596707947191809028}
+  lifeBar: {fileID: 8339234229894218402}
   soco: {fileID: 8300000, guid: 1e24d87d69731c84c9905f789ae023a9, type: 3}
   sonsDePassos:
   - {fileID: 8300000, guid: eec53751c4e79a7469fc34e774360128, type: 3}
@@ -412,7 +413,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c8657061120b2da4fb645654b16201f6, type: 3}
   - {fileID: 8300000, guid: 8ff53086d637af8478c1408b78b3dd05, type: 3}
   - {fileID: 8300000, guid: b662731f964d624449b092d4198147de, type: 3}
-  lifeBar: {fileID: 8339234229894218402}
+  dropItems:
+  - {fileID: 4901310008120183588, guid: fd59313f1ac1e894ab0610ad7facd426, type: 3}
+  dropChance: 0.45
 --- !u!50 &6712203128211403995
 Rigidbody2D:
   serializedVersion: 5

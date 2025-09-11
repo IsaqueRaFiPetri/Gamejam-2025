@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9205676570254513159}
   - component: {fileID: 8942145561736798935}
-  - component: {fileID: 4579879663355605907}
   - component: {fileID: 8303574767958951660}
   - component: {fileID: 7918688181035800931}
   - component: {fileID: 3651027962858780337}
@@ -30,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 5432773568017726156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7371, y: -0.5447, z: 0}
-  m_LocalScale: {x: 4.25, y: 4.25, z: 4.25}
+  m_LocalPosition: {x: -0.6387, y: -0.4415, z: 0}
+  m_LocalScale: {x: 4.7302504, y: 4.7302504, z: 4.7302504}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1098286324429101383, guid: 43e0dc4c9344745489477b8be45fb231, type: 3}
+  m_Sprite: {fileID: -2309041511392243316, guid: 214ef0e8f5f7ba3439af0ec780f7404e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,28 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4579879663355605907
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5432773568017726156}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a3c2c97f9a4882b45b65989e51063967, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!58 &8303574767958951660
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -147,8 +124,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.125
+  m_Offset: {x: 0.000000050402953, y: 0}
+  m_Radius: 0.21658914
 --- !u!50 &7918688181035800931
 Rigidbody2D:
   serializedVersion: 5

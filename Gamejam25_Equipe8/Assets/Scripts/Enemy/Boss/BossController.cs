@@ -19,6 +19,9 @@ public class BossController : MonoBehaviour
     [SerializeField] Image bossLifeBar;
     [SerializeField] TextMeshProUGUI bossNameAndPerCent;
 
+    [SerializeField] GameObject playerObj, uWinPainel;
+
+
     bool hasRegenerated = false;
     float nextAttackTime;
 
@@ -107,6 +110,8 @@ public class BossController : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Boss derrotado!");
+        uWinPainel.SetActive(true);
+        playerObj.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

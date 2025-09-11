@@ -27,4 +27,12 @@ public class PrensaScript : MonoBehaviour
                 indoPraFrente = true;
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            PlayerStatus.instance.Die();
+        }
+
+    }
 }
