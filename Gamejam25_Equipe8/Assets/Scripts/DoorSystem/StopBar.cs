@@ -20,7 +20,6 @@ public class StopBar : MonoBehaviour
     [SerializeField] GameObject door;
     [SerializeField] int needToOpen;
     [SerializeField] GameObject gamePainel;
-    [SerializeField] GameObject hideBTN;
 
     bool moving = true;
     int neededCorrect = 0;
@@ -56,7 +55,7 @@ public class StopBar : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
             gamePainel.SetActive(true);
@@ -81,7 +80,7 @@ public class StopBar : MonoBehaviour
             if (neededCorrect >= needToOpen)
             {
                 Debug.Log("Desbloqueado!");
-                
+                door.SetActive(false);
 
                 return;
             }
