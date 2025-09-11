@@ -406,6 +406,12 @@ MonoBehaviour:
   enemyStatus: {fileID: 11400000, guid: 844a1bf56e29d0a408564559c28785ae, type: 2}
   animator: {fileID: 5596707947191809028}
   soco: {fileID: 8300000, guid: 1e24d87d69731c84c9905f789ae023a9, type: 3}
+  sonsDePassos:
+  - {fileID: 8300000, guid: eec53751c4e79a7469fc34e774360128, type: 3}
+  - {fileID: 8300000, guid: dbe4405baeea2404ba3d422430b5fd3b, type: 3}
+  - {fileID: 8300000, guid: c8657061120b2da4fb645654b16201f6, type: 3}
+  - {fileID: 8300000, guid: 8ff53086d637af8478c1408b78b3dd05, type: 3}
+  - {fileID: 8300000, guid: b662731f964d624449b092d4198147de, type: 3}
   lifeBar: {fileID: 8339234229894218402}
 --- !u!50 &6712203128211403995
 Rigidbody2D:
