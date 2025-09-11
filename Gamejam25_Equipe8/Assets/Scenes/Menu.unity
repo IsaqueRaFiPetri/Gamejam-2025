@@ -1735,6 +1735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2066795702}
+  - component: {fileID: 2066795703}
   m_Layer: 0
   m_Name: Music_menu
   m_TagString: Untagged
@@ -1757,6 +1758,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2066795703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066795701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d8b3f9590d70e4291e395fbbd4e5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lava_city: {fileID: 0}
+  ship: {fileID: 0}
+  underground_cave: {fileID: 0}
+  endless_sand: {fileID: 0}
+  cave_crystal: {fileID: 8300000, guid: f20126eeae0c8274fb45e18c2d3b9ca4, type: 3}
+  cyberpunk: {fileID: 8300000, guid: bf13ce62a9ea1464a8330bd9354bfa46, type: 3}
+  lurid: {fileID: 8300000, guid: 9fea4010ca7aab940a38d309f498a7e5, type: 3}
+  song18: {fileID: 8300000, guid: 0964d581fcc20d245b45f5eaa074b6ff, type: 3}
+  xingling: {fileID: 8300000, guid: 46675a55024e14846be6f8789ddac774, type: 3}
 --- !u!1 &2074382466
 GameObject:
   m_ObjectHideFlags: 0
