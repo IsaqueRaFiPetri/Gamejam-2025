@@ -1,27 +1,23 @@
 using System.Collections;
 using UnityEngine;
 
-
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject EnemyPrefab;
-    [SerializeField] private float EnemySpawnCoolDown = 1.5f;
+    [Header("Configuração dos inimigos")]
+    [SerializeField] private GameObject[] enemyPrefabs; // array com 3 tipos diferentes
+    [SerializeField] private float enemySpawnCoolDown = 1.5f;
     [SerializeField] private int maxEnemies = 10;
 
     private Collider2D areaCollider;
     private int enemyCount = 0;
-    bool isSpawning;
+    private bool isSpawning;
+
     private void Awake()
     {
         areaCollider = GetComponent<Collider2D>();
     }
 
-    private void Start()
-    {
-        
-    }
-
-    private IEnumerator SpawnEnemy(float interval, GameObject Enemy)
+    private IEnumerator SpawnEnemies(float interval)
     {
         while (enemyCount < maxEnemies)
         {
@@ -29,7 +25,11 @@ public class EnemySpawner : MonoBehaviour
 
             Vector2 spawnPos = GetRandomPointInCollider(areaCollider);
 
-            Instantiate(Enemy, spawnPos, Quaternion.identity);
+            // Escolhe aleatoriamente um inimigo
+            int index = Random.Range(0, enemyPrefabs.Length);
+            GameObject prefab = enemyPrefabs[index];
+
+            Instantiate(prefab, spawnPos, Quaternion.identity);
             enemyCount++;
         }
     }
@@ -45,15 +45,16 @@ public class EnemySpawner : MonoBehaviour
                 Random.Range(bounds.min.y, bounds.max.y)
             );
         }
-        while (!col.OverlapPoint(point)); 
+        while (!col.OverlapPoint(point));
         return point;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isSpawning)
             return;
 
-        StartCoroutine(SpawnEnemy(EnemySpawnCoolDown, EnemyPrefab));
+        StartCoroutine(SpawnEnemies(enemySpawnCoolDown));
         isSpawning = true;
     }
 }

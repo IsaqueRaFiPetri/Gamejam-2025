@@ -23,8 +23,10 @@ public class Projetil : MonoBehaviour
         {
             if (acertouAlvo) return;
 
+            print(other.gameObject);
             Enemy enemy = other.GetComponent<Enemy>();
 
+            
             if (enemy != null)
             {
                 if (Troca_Personagens.instance.isHappy)
@@ -43,7 +45,11 @@ public class Projetil : MonoBehaviour
                 {
                     enemy.TakeDamageenemy(playerStats.damage);
                 }
+
                 acertouAlvo = true;
+
+                if (acertouAlvo == true)
+                    Destroy(gameObject);
             }
         }
         else if (other.CompareTag("Boss"))
