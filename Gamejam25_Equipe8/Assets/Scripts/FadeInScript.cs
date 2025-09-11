@@ -4,8 +4,12 @@ using System.Collections;
 
 public class FadeInScript : MonoBehaviour
 {
-    public Image fadeImage;      
-    public float fadeDuration = 2f; 
+    [Header("Referências")]
+    public Image fadeImage;
+    public Canvas targetCanvas;  
+
+    [Header("Configuração")]
+    public float fadeDuration = 2f;
 
     void Start()
     {
@@ -25,8 +29,11 @@ public class FadeInScript : MonoBehaviour
             yield return null;
         }
 
-       
         c.a = 0f;
         fadeImage.color = c;
+        if (targetCanvas != null)
+        {
+            targetCanvas.gameObject.SetActive(false);
+        }
     }
 }

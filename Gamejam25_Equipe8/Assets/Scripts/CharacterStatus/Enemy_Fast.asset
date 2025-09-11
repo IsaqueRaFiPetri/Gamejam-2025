@@ -23,7 +23,7 @@ MonoBehaviour:
   emotionRegen: 0
   emotionTime: 0
   allEmotionsCollected: 0
-  moveSpeed: 4.8
+  moveSpeed: 3.8
   toughness: 0.9
   damage: 4
   cooldown: 0.7

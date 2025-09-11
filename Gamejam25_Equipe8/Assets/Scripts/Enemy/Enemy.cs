@@ -82,7 +82,8 @@ public class Enemy : MonoBehaviour
     {
         if (canMove)
         {
-            rb.MovePosition(rb.position + moveDirection * enemyStatus.moveSpeed * Time.fixedDeltaTime);
+            // define a velocidade do inimigo diretamente
+            rb.linearVelocity = moveDirection * enemyStatus.moveSpeed;
 
             bool currentlyMoving = moveDirection != Vector2.zero;
 
@@ -98,7 +99,13 @@ public class Enemy : MonoBehaviour
                     StopCoroutine(passosCoroutine);
             }
         }
+        else
+        {
+            // Para o inimigo quando não pode se mover
+            rb.linearVelocity = Vector2.zero;
+        }
     }
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {

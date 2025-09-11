@@ -314,9 +314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a729c1c3221e2409434392ab533801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   enemyStatus: {fileID: 11400000, guid: 36d39acf7bc15e941b5c5aa576b13a24, type: 2}
+  playerTransform: {fileID: 0}
   animator: {fileID: 3842199021579898190}
+  lifeBar: {fileID: 5830079899242317579}
   soco: {fileID: 8300000, guid: 1e24d87d69731c84c9905f789ae023a9, type: 3}
   sonsDePassos:
   - {fileID: 8300000, guid: 574d70118068c704e9d2654d8e5b386f, type: 3}
@@ -325,7 +326,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f76b4e8c8e400f34dba1aeb2aaaddd98, type: 3}
   - {fileID: 8300000, guid: dc12b3fea9c332f4a88d3b03843cf9c7, type: 3}
   - {fileID: 8300000, guid: e353574aee6cacc4badcd5ac34123e20, type: 3}
-  lifeBar: {fileID: 5830079899242317579}
+  dropItems:
+  - {fileID: 4901310008120183588, guid: fd59313f1ac1e894ab0610ad7facd426, type: 3}
+  dropChance: 0.3
 --- !u!61 &5753575441833968950
 BoxCollider2D:
   m_ObjectHideFlags: 0
