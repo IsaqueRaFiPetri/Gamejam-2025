@@ -16,5 +16,5 @@ MonoBehaviour:
   lungeSpeed: 15
   telegraphTime: 0.5
   shakeAmount: 0.15
-  maxDistanceHead: 30
-  maxDistanceHands: 50
+  maxDistanceHead: 20
+  maxDistanceHands: 40

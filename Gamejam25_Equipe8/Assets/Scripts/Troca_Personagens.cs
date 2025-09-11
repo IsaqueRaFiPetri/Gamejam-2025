@@ -55,7 +55,6 @@ public class Troca_Personagens : MonoBehaviour
                 break;
             case Emotions.Happy: 
                 isHappy = true;
-                StartCoroutine(SwapBack(transformationTime));
                 break;
         }
 

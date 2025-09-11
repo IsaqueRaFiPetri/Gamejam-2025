@@ -50,7 +50,6 @@ public class EnemySpawner : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision);
         if (isSpawning)
             return;
 

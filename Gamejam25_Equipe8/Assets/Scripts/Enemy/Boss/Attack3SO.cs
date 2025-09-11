@@ -4,7 +4,7 @@ using System.Collections;
 [CreateAssetMenu(menuName = "Boss/Attacks/Attack3")]
 public class Attack3SO : BossAttack
 {
-    public ParticleSystem laserPrefab;
+    public GameObject laserPrefab;
     public float duration = 3f;
     public float telegraphTime = 0.6f;
     public float shakeAmount = 0.15f;
@@ -29,7 +29,7 @@ public class Attack3SO : BossAttack
         }
 
         // --- DISPARO LASER ---
-        ParticleSystem[] activeLasers = new ParticleSystem[parts.Length];
+        GameObject[] activeLasers = new GameObject[parts.Length];
         int[] directions = new int[parts.Length];
 
         for (int i = 0; i < parts.Length; i++)
@@ -40,9 +40,8 @@ public class Attack3SO : BossAttack
             directions[i] = Random.value > 0.5f ? 1 : -1;
 
             // spawn laser
-            ParticleSystem laser = Object.Instantiate(laserPrefab, part.position, Quaternion.identity);
+            GameObject laser = Object.Instantiate(laserPrefab, part.position, Quaternion.identity);
             laser.transform.up = (player.position - part.position).normalized;
-            laser.Play();
             activeLasers[i] = laser;
         }
 

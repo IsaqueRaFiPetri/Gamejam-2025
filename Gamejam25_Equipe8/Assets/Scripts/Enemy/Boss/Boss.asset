@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821bdfdac1f62464ab653834d2881b1e, type: 3}
   m_Name: Boss
   m_EditorClassIdentifier: 
-  life: 600
-  maxLife: 600
+  life: 0
+  maxLife: 400
   lifeRegen: 0
   energy: 0
   maxEnergy: 0
@@ -26,5 +26,5 @@ MonoBehaviour:
   moveSpeed: 3
   toughness: 0
   damage: 0
-  cooldown: 8
+  cooldown: 6
   regenCooldown: 0

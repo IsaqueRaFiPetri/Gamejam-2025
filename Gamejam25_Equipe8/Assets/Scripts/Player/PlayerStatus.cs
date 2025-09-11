@@ -24,9 +24,6 @@ public class PlayerStatus : MonoBehaviour
         UpdateUI();
         ReduceEmotionOverTime();
         CheckEmotionCollection();
-
-        if(Troca_Personagens.instance.isHappy)
-            RegenerateStats();
     }
 
     void UpdateUI()
@@ -38,11 +35,11 @@ public class PlayerStatus : MonoBehaviour
 
     public void RegenerateStats()
     {
-        playerStatus.life = playerStatus.life + playerStatus.lifeRegen;
-        playerStatus.energy = playerStatus.energy + playerStatus.energyRegen;
-        playerStatus.emotion = playerStatus.emotion + playerStatus.emotionRegen;
-        
+        playerStatus.life = Mathf.Min(playerStatus.life + playerStatus.lifeRegen, playerStatus.maxLife);
+        playerStatus.energy = Mathf.Min(playerStatus.energy + playerStatus.energyRegen, playerStatus.maxEnergy);
+        playerStatus.emotion = Mathf.Min(playerStatus.emotion + playerStatus.emotionRegen, playerStatus.maxEmotion);
     }
+
 
     void ReduceEmotionOverTime()
     {
