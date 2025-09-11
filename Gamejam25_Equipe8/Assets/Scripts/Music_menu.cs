@@ -1,15 +1,7 @@
 using UnityEngine;
 
 public class Music_menu : MonoBehaviour
-{
-    public AudioClip lava_city;
-    private AudioSource audioShip;
-    public AudioClip ship;
-    private AudioSource audiolava_city;
-    public AudioClip underground_cave;
-    private AudioSource audioUnderground_cave;
-    public AudioClip endless_sand;
-    private AudioSource audioEndless_sand;
+{    
     public AudioClip cave_crystal;
     private AudioSource audiocave_crystal;
     public AudioClip cyberpunk;
@@ -22,36 +14,12 @@ public class Music_menu : MonoBehaviour
     private AudioSource audioxingling;
 
     void Start()
-    {
-        audiolava_city = gameObject.AddComponent<AudioSource>();
-        audioShip = gameObject.AddComponent<AudioSource>();
-        audioUnderground_cave = gameObject.AddComponent<AudioSource>();
-        audioEndless_sand = gameObject.AddComponent<AudioSource>();
+    {      
         audiocave_crystal = gameObject.AddComponent<AudioSource>();
         audiocyberpunk = gameObject.AddComponent<AudioSource>();
         audiolurid = gameObject.AddComponent<AudioSource>();
         audiosong18d = gameObject.AddComponent<AudioSource>();
-        audioxingling = gameObject.AddComponent<AudioSource>();
-
-        audioShip.clip = ship;
-        audioShip.loop = true;
-        audioShip.volume = 1f;
-        audioShip.Play();
-
-        audiolava_city.clip = lava_city;
-        audiolava_city.loop = true;
-        audiolava_city.volume = 8f;
-        audiolava_city.Play();
-
-        audioUnderground_cave.clip = underground_cave;
-        audioUnderground_cave.loop = true;
-        audioUnderground_cave.volume = 0.5f;
-        audioUnderground_cave.Play();
-
-        audioEndless_sand.clip = endless_sand;
-        audioEndless_sand.loop = true;
-        audioEndless_sand.volume = 6f;
-        audioEndless_sand.Play();
+        audioxingling = gameObject.AddComponent<AudioSource>();       
 
         audiocave_crystal.clip = cave_crystal;
         audiocave_crystal.loop = true;
